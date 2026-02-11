@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海航随心飞航线</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        .flight-card {
+            transition: transform 0.2s;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+        }
+        .flight-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .province-badge {
+            font-size: 0.8em;
+        }
+        .search-box {
+            max-width: 400px;
+        }
+        :root {
+            --hna-primary: #e60012; /* 海南航空主色红 */
+            --hna-secondary: #cfa76e; /* 金色点缀 */
+            --hna-dark: #b0000e; /* 深红用于hover */
+        }
+        .bg-hna { background-color: var(--hna-primary) !important; }
+        .text-hna { color: var(--hna-primary) !important; }
+        .btn-hna { background-color: var(--hna-primary); color: #fff; border-color: var(--hna-primary); }
+        .btn-hna:hover { background-color: var(--hna-dark); border-color: var(--hna-dark); }
+        .btn-outline-hna { color: var(--hna-primary); border-color: var(--hna-primary); }
+        .btn-outline-hna:hover { background-color: var(--hna-primary); color: #fff; }
+        /* 顶部三模块改为纯色卡片 */
+        .stats-card {
+            background-color: #f8f9fa;
+            color: #333;
+            border-radius: 12px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eee;
+        }
+        /* 分页组件配色为海南航空主题 */
+        .pagination .page-link { color: var(--hna-primary); border-color: var(--hna-primary); }
+        .pagination .page-link:hover { color: #fff; background-color: var(--hna-primary); border-color: var(--hna-primary); }
+        .page-item.active .page-link { background-color: var(--hna-primary); border-color: var(--hna-primary); }
+        .page-item.disabled .page-link { color: #bbb; border-color: #eee; }
+        /* 统一顶部统计卡数值尺寸为大号 */
+        .stats-card .card-body h2 { font-weight: 600; }
+        .product-chip-group .btn {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-hna">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-airplane"></i> 海航随心飞航线
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- 副标题 -->
+        <div class="mb-3">
+            <div class="px-3 py-2 bg-light border rounded">
+                海航 PLUS 会员权益卡适用航班参考列表(适用航班日期:即日起-2026年2月16日)
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="px-3 py-2 bg-light border rounded">
+                数据采集于海南航空官方，具体票务信息以官方为准，本站仅供参考
+            </div>
+        </div>
+        <!-- 统计信息 -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h5><i class="bi bi-collection"></i> 总航线数</h5>
+                        <h2 id="total-flights">{{ data.total_flights }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h5><i class="bi bi-arrow-repeat"></i> 最后更新</h5>
+                        <h2 id="last-update">{{ source_last_update }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h5><i class="bi bi-geo-alt"></i> 覆盖省份</h5>
+                        <h2 id="total-provinces">{{ provinces|length }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 筛选和搜索 -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <select id="province-filter" class="form-select">
+                    <option value="all">所有省份</option>
+                    {% for province in provinces %}
+                    <option value="{{ province }}">{{ province }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group search-box">
+                    <input type="text" id="search-input" class="form-control" placeholder="搜索航班号、出发地、目的地...">
+                    <button class="btn btn-outline-secondary" type="button" onclick="searchFlights()">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 城市与产品筛选 -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <select id="dep-city-filter" class="form-select">
+                    <option value="all">所有出港城市</option>
+                    {% for city in dep_cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select id="arr-city-filter" class="form-select">
+                    <option value="all">所有到港城市</option>
+                    {% for city in arr_cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <div class="product-chip-group d-flex align-items-center">
+                    <span class="me-2">产品:</span>
+                    <button type="button" class="btn btn-outline-hna" data-product="all" id="product-all">所有</button>
+                    <button type="button" class="btn btn-outline-hna" data-product="666" id="product-666">666</button>
+                    <button type="button" class="btn btn-outline-hna" data-product="2666" id="product-2666">2666</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 操作按钮（仅保留统计） -->
+        <div class="row mb-3">
+            <div class="col">
+                <button class="btn btn-outline-hna" onclick="loadStatistics()">
+                    <i class="bi bi-bar-chart"></i> 查看统计
+                </button>
+            </div>
+        </div>
+
+        <!-- 航线列表（表格展示） -->
+        <div class="row">
+            <div class="col">
+                <div id="loading" class="text-center">
+                    <div class="spinner-border text-hna" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <p class="mt-2">正在加载航线数据...</p>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-sm table-striped" id="flights-table">
+                        <thead>
+                            <tr>
+                                <th>航班号</th>
+                                <th>出港城市</th>
+                                <th>到港城市</th>
+                                <th>出发时刻</th>
+                                <th>班期</th>
+                                <th>产品</th>
+                                <th>出港省份</th>
+                                <th>到港省份</th>
+                            </tr>
+                        </thead>
+                        <tbody id="flights-container"></tbody>
+                    </table>
+                </div>
+                <div id="pagination" class="text-center my-3" style="display: none;"></div>
+                <div id="no-data" class="text-center mt-4" style="display: none;">
+                    <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+                    <p class="text-muted">暂无航线数据</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- 统计模态框 -->
+        <div class="modal fade" id="statisticsModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-hna">航线统计信息</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="statistics-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentPage = 1;
+        const pageSize = 30;
+        let totalPages = 0;
+        let currentFlights = [];
+
+        // 页面加载时获取数据
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFlights();
+        });
+
+        // 加载航班数据
+        function loadFlights(page) {
+            if (page) {
+                currentPage = page;
+            } else {
+                currentPage = 1;
+            }
+            const province = document.getElementById('province-filter').value;
+            const search = document.getElementById('search-input').value;
+            const depCity = document.getElementById('dep-city-filter').value;
+            const arrCity = document.getElementById('arr-city-filter').value;
+            const product = window.selectedProduct || 'all';
+            let productContains = '';
+            
+            let url = '/data_proxy?action=flights&';
+            if (province !== 'all') url += `province=${encodeURIComponent(province)}&`;
+            if (search) url += `search=${encodeURIComponent(search)}&`;
+            if (depCity !== 'all') url += `departure_city=${encodeURIComponent(depCity)}&`;
+            if (arrCity !== 'all') url += `arrival_city=${encodeURIComponent(arrCity)}&`;
+            // 产品筛选：666 使用模糊匹配，其它用精确匹配
+            if (product === '666') {
+                productContains = '666';
+                url += `product_contains=${encodeURIComponent(productContains)}&`;
+            } else if (product !== 'all') {
+                url += `product=${encodeURIComponent(product)}&`;
+            }
+            url += `page=${encodeURIComponent(currentPage)}&page_size=${encodeURIComponent(pageSize)}&`;
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        currentFlights = data.data;
+                        totalPages = data.total_pages || 0;
+                        displayFlights();
+                        updateStats(data.total, data.source_last_update || data.last_update);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    hideLoading();
+                });
+        }
+
+        // 显示航班数据
+        function displayFlights() {
+            const container = document.getElementById('flights-container');
+            container.innerHTML = '';
+            
+            if (currentFlights.length === 0) {
+                document.getElementById('no-data').style.display = 'block';
+                hideLoading();
+                return;
+            }
+
+            const html = currentFlights.map(flight => `
+                <tr>
+                    <td>${flight.flight_number}</td>
+                    <td>${flight.departure_city}</td>
+                    <td>${flight.arrival_city}</td>
+                    <td>${flight.departure_time}</td>
+                    <td>${flight.schedule}</td>
+                    <td>${flight.product}</td>
+                    <td>${flight.departure_province}</td>
+                    <td>${flight.arrival_province}</td>
+                </tr>
+            `).join('');
+
+            container.innerHTML = html;
+            
+            // 渲染分页
+            renderPagination();
+            
+            hideLoading();
+        }
+
+        function renderPagination() {
+            const pagination = document.getElementById('pagination');
+            if (totalPages <= 1) {
+                pagination.style.display = 'none';
+                pagination.innerHTML = '';
+                return;
+            }
+            pagination.style.display = 'block';
+            let html = '<nav aria-label="航线分页"><ul class="pagination justify-content-center">';
+            // 上一页
+            const prevDisabled = currentPage === 1 ? ' disabled' : '';
+            html += `<li class="page-item${prevDisabled}"><a class="page-link" href="#" onclick="gotoPage(${currentPage-1});return false;">上一页</a></li>`;
+            // 页码窗口
+            const total = totalPages;
+            const start = Math.max(1, currentPage - 2);
+            const end = Math.min(total, currentPage + 2);
+            if (start > 1) {
+                html += `<li class="page-item"><a class="page-link" href="#" onclick="gotoPage(1);return false;">1</a></li>`;
+                if (start > 2) html += `<li class="page-item disabled"><span class="page-link">…</span></li>`;
+            }
+            for (let i = start; i <= end; i++) {
+                const active = i === currentPage ? ' active' : '';
+                html += `<li class="page-item${active}"><a class="page-link" href="#" onclick="gotoPage(${i});return false;">${i}</a></li>`;
+            }
+            if (end < total) {
+                if (end < total - 1) html += `<li class="page-item disabled"><span class="page-link">…</span></li>`;
+                html += `<li class="page-item"><a class="page-link" href="#" onclick="gotoPage(${total});return false;">${total}</a></li>`;
+            }
+            // 下一页
+            const nextDisabled = currentPage === total ? ' disabled' : '';
+            html += `<li class="page-item${nextDisabled}"><a class="page-link" href="#" onclick="gotoPage(${currentPage+1});return false;">下一页</a></li>`;
+            html += '</ul></nav>';
+            pagination.innerHTML = html;
+        }
+        function gotoPage(page) {
+            if (page < 1 || page > totalPages) return;
+            loadFlights(page);
+        }
+
+        // 搜索航班
+        function searchFlights() {
+            showLoading();
+            loadFlights(1);
+        }
+
+        // 更新数据
+
+        // 加载统计信息
+        function loadStatistics() {
+            fetch('/data_proxy?action=statistics')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        let html = `
+                            <div class="mb-3">
+                                <strong>最后更新:</strong> <span class="badge bg-hna">${data.source_last_update || data.last_update}</span><br>
+                                <strong>总航线数:</strong> <span class="badge bg-hna">${data.total_flights}</span>
+                            </div>
+                            <h6>各省份航线分布:</h6>
+                            <div class="row">
+                        `;
+                        
+                        // 按航线数量排序
+                        const sortedStats = Object.entries(data.province_stats)
+                            .sort((a, b) => b[1] - a[1]);
+                        
+                        sortedStats.forEach(([province, count]) => {
+                            html += `
+                                <div class="col-md-6 mb-2">
+                                    <div class="d-flex justify-content-between">
+                                        <span>${province}</span>
+                                        <span class="badge bg-hna">${count}</span>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        
+                        html += '</div>';
+                        document.getElementById('statistics-content').innerHTML = html;
+                        
+                        // 显示模态框
+                        new bootstrap.Modal(document.getElementById('statisticsModal')).show();
+                    }
+                });
+        }
+
+        // 更新统计信息
+        function updateStats(total, lastUpdate) {
+            document.getElementById('total-flights').textContent = total;
+            document.getElementById('last-update').textContent = lastUpdate;
+        }
+
+        // 显示加载状态
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('flights-container').innerHTML = '';
+            document.getElementById('no-data').style.display = 'none';
+        }
+
+        // 隐藏加载状态
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        // 省份筛选变化
+        document.getElementById('province-filter').addEventListener('change', () => loadFlights(1));
+        document.getElementById('dep-city-filter').addEventListener('change', () => loadFlights(1));
+        document.getElementById('arr-city-filter').addEventListener('change', () => loadFlights(1));
+        // 产品按钮事件
+        function setProductSelection(value) {
+            window.selectedProduct = value;
+            // 高亮当前选择
+            ['product-all','product-666','product-2666'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (!btn) return;
+                const isActive = btn.dataset.product === value;
+                btn.classList.toggle('btn-hna', isActive);
+                btn.classList.toggle('btn-outline-hna', !isActive);
+            });
+            loadFlights(1);
+        }
+        document.getElementById('product-all').addEventListener('click', () => setProductSelection('all'));
+        document.getElementById('product-666').addEventListener('click', () => setProductSelection('666'));
+        document.getElementById('product-2666').addEventListener('click', () => setProductSelection('2666'));
+        // 默认选择“所有”
+        setProductSelection('all');
+        
+        // 搜索输入框回车事件
+        document.getElementById('search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchFlights();
+            }
+        });
+    </script>
+</body>
+</html>
