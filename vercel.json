@@ -7,8 +7,16 @@
   "framework": null,
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "/app\\.js",
+      "headers": {
+        "Content-Type": "application/javascript; charset=utf-8"
+      }
+    },
+    {
+      "src": "/hainan_airlines_data\\.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      }
     }
   ]
 }
