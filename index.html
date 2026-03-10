@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海航随心飞航线</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        .flight-card {
+            transition: transform 0.2s;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+        }
+        .flight-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .province-badge {
+            font-size: 0.8em;
+        }
+        .search-box {
+            max-width: 400px;
+        }
+        :root {
+            --hna-primary: #e60012;
+            --hna-secondary: #cfa76e;
+            --hna-dark: #b0000e;
+        }
+        .bg-hna { background-color: var(--hna-primary) !important; }
+        .text-hna { color: var(--hna-primary) !important; }
+        .btn-hna { background-color: var(--hna-primary); color: #fff; border-color: var(--hna-primary); }
+        .btn-hna:hover { background-color: var(--hna-dark); border-color: var(--hna-dark); }
+        .btn-outline-hna { color: var(--hna-primary); border-color: var(--hna-primary); }
+        .btn-outline-hna:hover { background-color: var(--hna-primary); color: #fff; }
+        .stats-card {
+            background-color: #f8f9fa;
+            color: #333;
+            border-radius: 12px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eee;
+        }
+        .pagination .page-link { color: var(--hna-primary); border-color: var(--hna-primary); }
+        .pagination .page-link:hover { color: #fff; background-color: var(--hna-primary); border-color: var(--hna-primary); }
+        .page-item.active .page-link { background-color: var(--hna-primary); border-color: var(--hna-primary); }
+        .page-item.disabled .page-link { color: #bbb; border-color: #eee; }
+        .stats-card .card-body h2 { font-weight: 600; }
+        .product-chip-group .btn {
+            margin-right: 8px;
+        }
+        .filter-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-hna">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-airplane"></i> 海航随心飞航线
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="mb-3">
+            <div class="px-3 py-2 bg-light border rounded">
+                海航 PLUS 会员权益卡适用航班参考列表 (适用航班日期：即日起 -2026 年 2 月 16 日)
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="px-3 py-2 bg-light border rounded">
+                数据采集于海南航空官方，具体票务信息以官方为准，本站仅供参考
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h5><i class="bi bi-collection"></i> 总航线数</h5>
+                        <h2 id="total-flights">-</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h5><i class="bi bi-arrow-repeat"></i> 最后更新</h5>
+                        <h2 id="last-update">-</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="card-body text-center">
+                        <h5><i class="bi bi-geo-alt"></i> 覆盖省份</h5>
+                        <h2 id="total-provinces">-</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <select id="province-filter" class="form-select">
+                        <option value="all">所有省份</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group search-box">
+                        <input type="text" id="search-input" class="form-control" placeholder="搜索航班号、出发地、目的地...">
+                        <button class="btn btn-outline-secondary" type="button" onclick="searchFlights()">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <select id="dep-city-filter" class="form-select">
+                        <option value="all">所有出港城市</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select id="arr-city-filter" class="form-select">
+                        <option value="all">所有到港城市</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-chip-group d-flex align-items-center">
+                        <span class="me-2">产品:</span>
+                        <button type="button" class="btn btn-outline-hna" data-product="all" id="product-all">所有</button>
+                        <button type="button" class="btn btn-outline-hna" data-product="666" id="product-666">666</button>
+                        <button type="button" class="btn btn-outline-hna" data-product="2666" id="product-2666">2666</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <button class="btn btn-outline-hna" onclick="loadStatistics()">
+                    <i class="bi bi-bar-chart"></i> 查看统计
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div id="loading" class="text-center">
+                    <div class="spinner-border text-hna" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <p class="mt-2">正在加载航线数据...</p>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-sm table-striped" id="flights-table">
+                        <thead>
+                            <tr>
+                                <th>航班号</th>
+                                <th>出港城市</th>
+                                <th>到港城市</th>
+                                <th>出发时刻</th>
+                                <th>班期</th>
+                                <th>产品</th>
+                                <th>出港省份</th>
+                                <th>到港省份</th>
+                            </tr>
+                        </thead>
+                        <tbody id="flights-container"></tbody>
+                    </table>
+                </div>
+                <div id="pagination" class="text-center my-3" style="display: none;"></div>
+                <div id="no-data" class="text-center mt-4" style="display: none;">
+                    <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+                    <p class="text-muted">暂无航线数据</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="statisticsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-hna">航线统计信息</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="statistics-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
