@@ -198,8 +198,16 @@ class HNAirlineCrawler:
                 k = f"{f.get('flight_number','')}|{f.get('departure_city','')}|{f.get('arrival_city','')}"
                 by_key[k] = f
         merged = list(by_key.values())
+        
+        # 保留原有的 data_version（如果存在），否则使用当前日期
+        base_version = base.get('data_version')
+        if base_version:
+            data_version = base_version
+        else:
+            data_version = datetime.now().strftime('%Y-%m-%d')
+        
         data = {
-            'last_update': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'data_version': data_version,
             'total_flights': len(merged),
             'flights': merged
         }
@@ -213,7 +221,7 @@ class HNAirlineCrawler:
         if not os.path.exists(self.data_file):
             self._data_cache = None
             self._data_cache_mtime = None
-            return {'flights': [], 'last_update': '从未更新', 'total_flights': 0}
+            return {'flights': [], 'data_version': '从未更新', 'total_flights': 0}
         
         try:
             mtime = os.path.getmtime(self.data_file)

@@ -249,7 +249,7 @@ function loadStatistics() {
     const data = allData;
     let html = `
         <div class="mb-3">
-            <strong>最后更新:</strong> <span class="badge bg-hna">${data.last_update}</span><br>
+            <strong>数据版本:</strong> <span class="badge bg-hna">${data.data_version || '未知'}</span><br>
             <strong>总航线数:</strong> <span class="badge bg-hna">${data.total_flights}</span>
         </div>
         <h6>各省份航线分布:</h6>
@@ -285,7 +285,7 @@ function loadStatistics() {
 // 更新统计信息
 function updateStats(data) {
     document.getElementById('total-flights').textContent = data.total_flights || 0;
-    document.getElementById('last-update').textContent = data.last_update || '未知';
+    document.getElementById('data-version').textContent = data.data_version || '未知';
 
     // 计算覆盖省份数
     const uniqueProvinces = new Set();
