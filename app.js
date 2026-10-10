@@ -155,12 +155,12 @@ function applyFilters() {
     if (arrCity !== 'all') {
         flights = flights.filter(function (f) { return f.arrival_city === arrCity; });
     }
-    if (selectedProduct === '666') {
+    // 产品 token 匹配：'666/2666' 同时适用两种产品；
+    // 点 666 → 含 666 的航班，点 2666 → 含 2666 的航班（含双产品记录）
+    if (selectedProduct !== 'all') {
         flights = flights.filter(function (f) {
-            return (f.product || '').split('/').indexOf('666') !== -1;
+            return (f.product || '').split('/').indexOf(selectedProduct) !== -1;
         });
-    } else if (selectedProduct !== 'all') {
-        flights = flights.filter(function (f) { return f.product === selectedProduct; });
     }
     if (search) {
         flights = flights.filter(function (f) { return f._search.indexOf(search) !== -1; });
@@ -260,9 +260,9 @@ function displayFlights(rows, total) {
             '<td>' + escapeHtml(f.departure_city) + '</td>' +
             '<td>' + escapeHtml(f.arrival_city) + '</td>' +
             '<td>' + escapeHtml(f.departure_time) + '</td>' +
-            '<td><span class="schedule-badge" title="班期代码: ' + escapeAttr(f.schedule) + '">' + scheduleText(f.schedule) + '</span></td>' +
-            '<td><span class="date-range-badge">' + escapeHtml(f.date_range || '-') + '</span></td>' +
-            '<td><span class="product-badge">' + escapeHtml(f.product) + '</span></td>' +
+            '<td title="班期代码: ' + escapeAttr(f.schedule) + '">' + scheduleText(f.schedule) + '</td>' +
+            '<td>' + escapeHtml(f.date_range || '-') + '</td>' +
+            '<td>' + escapeHtml(f.product) + '</td>' +
             '<td>' + escapeHtml(f.departure_province) + '</td>' +
             '<td>' + escapeHtml(f.arrival_province) + '</td>' +
             '</tr>';
@@ -393,7 +393,7 @@ function loadStatistics() {
         '<span class="badge bg-hna">数据版本: ' + escapeHtml(allData.data_version || '未知') + '</span>' +
         '<span class="badge bg-hna">当前筛选: ' + filteredFlights.length + ' 条</span>';
     Object.entries(productStats).forEach(function (kv) {
-        html += '<span class="product-badge">' + escapeHtml(kv[0]) + ' × ' + kv[1] + '</span>';
+        html += '<span class="small text-muted">' + escapeHtml(kv[0]) + ' × ' + kv[1] + '</span>';
     });
     html += '</div><h6 class="text-muted">各省份航线分布（出港+到港）:</h6><div class="row g-2">';
 
@@ -419,6 +419,7 @@ function loadStatistics() {
 function updateStats(data) {
     document.getElementById('total-flights').textContent = data.total_flights || data.flights.length || 0;
     document.getElementById('data-version').textContent = data.data_version || '未知';
+    document.getElementById('season-text').textContent = data.season || '';
 
     const uniqueProvinces = new Set();
     data.flights.forEach(function (f) {

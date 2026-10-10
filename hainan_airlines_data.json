@@ -1,6 +1,6 @@
 {
   "data_version": "2026冬春航季",
-  "season": "2026.10.25 - 2027.03.27",
+  "season": "",
   "total_flights": 1491,
   "flights": [
     {
@@ -10,7 +10,7 @@
       "departure_time": "19:45",
       "schedule": "1",
       "date_range": "10.26-03.22",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "新疆"
     },
@@ -32,7 +32,7 @@
       "departure_time": "19:45",
       "schedule": "3",
       "date_range": "10.28-03.24",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "新疆"
     },
@@ -65,7 +65,7 @@
       "departure_time": "19:50",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "新疆"
     },
@@ -87,7 +87,7 @@
       "departure_time": "19:10",
       "schedule": "17",
       "date_range": "10.25-03.22",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "新疆"
     },
@@ -98,7 +98,7 @@
       "departure_time": "19:10",
       "schedule": "35",
       "date_range": "10.28-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "新疆"
     },
@@ -109,7 +109,7 @@
       "departure_time": "19:10",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "四川"
     },
@@ -219,7 +219,7 @@
       "departure_time": "19:35",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "内蒙古"
     },
@@ -263,7 +263,7 @@
       "departure_time": "08:45",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "青海"
     },
@@ -318,7 +318,7 @@
       "departure_time": "08:45",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "青海"
     },
@@ -417,7 +417,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "四川"
     },
@@ -428,7 +428,7 @@
       "departure_time": "08:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "重庆"
     },
@@ -450,7 +450,7 @@
       "departure_time": "19:00",
       "schedule": "4",
       "date_range": "10.29-03.25",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "重庆"
     },
@@ -461,7 +461,7 @@
       "departure_time": "19:15",
       "schedule": "6",
       "date_range": "10.31-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "重庆"
     },
@@ -516,7 +516,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "广东"
     },
@@ -527,7 +527,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "广东"
     },
@@ -560,7 +560,7 @@
       "departure_time": "08:45",
       "schedule": "24",
       "date_range": "10.27-03.25",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "贵州"
     },
@@ -593,7 +593,7 @@
       "departure_time": "19:00",
       "schedule": "467",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "海南"
     },
@@ -604,7 +604,7 @@
       "departure_time": "19:00",
       "schedule": "1235",
       "date_range": "10.26-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "海南"
     },
@@ -758,7 +758,7 @@
       "departure_time": "08:45",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "江西"
     },
@@ -791,7 +791,7 @@
       "departure_time": "08:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "云南"
     },
@@ -802,7 +802,7 @@
       "departure_time": "09:00",
       "schedule": "2",
       "date_range": "10.27-03.23",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "云南"
     },
@@ -813,7 +813,7 @@
       "departure_time": "08:10",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "四川"
     },
@@ -835,7 +835,7 @@
       "departure_time": "19:25",
       "schedule": "123457",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "甘肃"
     },
@@ -846,7 +846,7 @@
       "departure_time": "19:45",
       "schedule": "367",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "甘肃"
     },
@@ -912,7 +912,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "海南"
     },
@@ -923,7 +923,7 @@
       "departure_time": "19:00",
       "schedule": "12456",
       "date_range": "10.26-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "海南"
     },
@@ -934,7 +934,7 @@
       "departure_time": "19:15",
       "schedule": "7",
       "date_range": "10.25-03.21",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "海南"
     },
@@ -956,7 +956,7 @@
       "departure_time": "08:25",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "上海"
     },
@@ -989,7 +989,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "广东"
     },
@@ -1000,7 +1000,7 @@
       "departure_time": "19:30",
       "schedule": "137",
       "date_range": "10.25-03.24",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "广东"
     },
@@ -1011,7 +1011,7 @@
       "departure_time": "19:30",
       "schedule": "2456",
       "date_range": "10.27-03.23",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "广东"
     },
@@ -1044,7 +1044,7 @@
       "departure_time": "08:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "浙江"
     },
@@ -1055,7 +1055,7 @@
       "departure_time": "08:25",
       "schedule": "1234567",
       "date_range": "10.25-03.25",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "新疆"
     },
@@ -1066,7 +1066,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "福建"
     },
@@ -1121,7 +1121,7 @@
       "departure_time": "08:30",
       "schedule": "7",
       "date_range": "10.25-03.21",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "云南"
     },
@@ -1132,7 +1132,7 @@
       "departure_time": "09:00",
       "schedule": "46",
       "date_range": "10.29-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "云南"
     },
@@ -1143,7 +1143,7 @@
       "departure_time": "08:15",
       "schedule": "7",
       "date_range": "10.25-03.21",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "湖北"
     },
@@ -1154,7 +1154,7 @@
       "departure_time": "08:45",
       "schedule": "3",
       "date_range": "10.28-03.24",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "湖北"
     },
@@ -1165,7 +1165,7 @@
       "departure_time": "19:00",
       "schedule": "2345",
       "date_range": "10.27-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "宁夏"
     },
@@ -1176,7 +1176,7 @@
       "departure_time": "19:15",
       "schedule": "167",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "宁夏"
     },
@@ -1187,7 +1187,7 @@
       "departure_time": "08:15",
       "schedule": "5",
       "date_range": "10.30-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "陕西"
     },
@@ -1198,7 +1198,7 @@
       "departure_time": "19:00",
       "schedule": "4",
       "date_range": "10.29-03.25",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "北京",
       "arrival_province": "陕西"
     },
@@ -1286,7 +1286,7 @@
       "departure_time": "19:35",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖南",
       "arrival_province": "贵州"
     },
@@ -1297,7 +1297,7 @@
       "departure_time": "19:45",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖南",
       "arrival_province": "海南"
     },
@@ -1319,7 +1319,7 @@
       "departure_time": "19:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖南",
       "arrival_province": "北京"
     },
@@ -1330,7 +1330,7 @@
       "departure_time": "19:30",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖南",
       "arrival_province": "北京"
     },
@@ -1352,7 +1352,7 @@
       "departure_time": "19:50",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖南",
       "arrival_province": "辽宁"
     },
@@ -1374,7 +1374,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖南",
       "arrival_province": "黑龙江"
     },
@@ -1528,7 +1528,7 @@
       "departure_time": "19:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖南",
       "arrival_province": "河北"
     },
@@ -1583,7 +1583,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "北京"
     },
@@ -1594,7 +1594,7 @@
       "departure_time": "09:00",
       "schedule": "3",
       "date_range": "10.28-03.24",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "北京"
     },
@@ -1616,7 +1616,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "江西"
     },
@@ -1638,7 +1638,7 @@
       "departure_time": "19:55",
       "schedule": "12357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "广东"
     },
@@ -1671,7 +1671,7 @@
       "departure_time": "19:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "安徽"
     },
@@ -1682,7 +1682,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "山东"
     },
@@ -1748,7 +1748,7 @@
       "departure_time": "19:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "新疆"
     },
@@ -1781,7 +1781,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "海南"
     },
@@ -1847,7 +1847,7 @@
       "departure_time": "19:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "新疆"
     },
@@ -1858,7 +1858,7 @@
       "departure_time": "19:15",
       "schedule": "46",
       "date_range": "10.29-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "新疆"
     },
@@ -1902,7 +1902,7 @@
       "departure_time": "19:25",
       "schedule": "1",
       "date_range": "10.26-03.22",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖南",
       "arrival_province": "福建"
     },
@@ -1913,7 +1913,7 @@
       "departure_time": "19:30",
       "schedule": "234567",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "贵州"
     },
@@ -1924,7 +1924,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -1968,7 +1968,7 @@
       "departure_time": "19:30",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "河北"
     },
@@ -1979,7 +1979,7 @@
       "departure_time": "19:30",
       "schedule": "357",
       "date_range": "11.01-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "河北"
     },
@@ -2001,7 +2001,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "广西"
     },
@@ -2023,7 +2023,7 @@
       "departure_time": "08:50",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "北京"
     },
@@ -2166,7 +2166,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "广东"
     },
@@ -2177,7 +2177,7 @@
       "departure_time": "19:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "广东"
     },
@@ -2221,7 +2221,7 @@
       "departure_time": "19:30",
       "schedule": "123456",
       "date_range": "10.26-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "海南"
     },
@@ -2232,7 +2232,7 @@
       "departure_time": "19:35",
       "schedule": "7",
       "date_range": "10.25-03.21",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "海南"
     },
@@ -2276,7 +2276,7 @@
       "departure_time": "08:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "浙江"
     },
@@ -2331,7 +2331,7 @@
       "departure_time": "08:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "广东"
     },
@@ -2375,7 +2375,7 @@
       "departure_time": "19:20",
       "schedule": "1234567",
       "date_range": "10.25-01.16",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "山东"
     },
@@ -2463,7 +2463,7 @@
       "departure_time": "08:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "浙江"
     },
@@ -2507,7 +2507,7 @@
       "departure_time": "19:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "浙江"
     },
@@ -2540,7 +2540,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "01.01-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "福建"
     },
@@ -2595,7 +2595,7 @@
       "departure_time": "19:10",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "上海"
     },
@@ -2661,7 +2661,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "河北"
     },
@@ -2683,7 +2683,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "天津"
     },
@@ -2727,7 +2727,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "浙江"
     },
@@ -2848,7 +2848,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "江西"
     },
@@ -2870,7 +2870,7 @@
       "departure_time": "19:20",
       "schedule": "1234567",
       "date_range": "10.25-01.16",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "陕西"
     },
@@ -3024,7 +3024,7 @@
       "departure_time": "19:35",
       "schedule": "1234567",
       "date_range": "10.25-01.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "陕西"
     },
@@ -3035,7 +3035,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "云南"
     },
@@ -3101,7 +3101,7 @@
       "departure_time": "19:30",
       "schedule": "246",
       "date_range": "10.27-01.16",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "河南"
     },
@@ -3123,7 +3123,7 @@
       "departure_time": "19:30",
       "schedule": "246",
       "date_range": "10.27-01.16",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "广西"
     },
@@ -3145,7 +3145,7 @@
       "departure_time": "08:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "浙江"
     },
@@ -3156,7 +3156,7 @@
       "departure_time": "19:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "山东"
     },
@@ -3167,7 +3167,7 @@
       "departure_time": "09:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "上海"
     },
@@ -3178,7 +3178,7 @@
       "departure_time": "19:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "广东"
     },
@@ -3222,7 +3222,7 @@
       "departure_time": "08:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "天津"
     },
@@ -3233,7 +3233,7 @@
       "departure_time": "09:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "山东"
     },
@@ -3244,7 +3244,7 @@
       "departure_time": "08:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "山东"
     },
@@ -3288,7 +3288,7 @@
       "departure_time": "19:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "新疆"
     },
@@ -3354,7 +3354,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "新疆"
     },
@@ -3376,7 +3376,7 @@
       "departure_time": "19:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "北京"
     },
@@ -3387,7 +3387,7 @@
       "departure_time": "19:55",
       "schedule": "16",
       "date_range": "10.26-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "北京"
     },
@@ -3420,7 +3420,7 @@
       "departure_time": "08:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "四川"
     },
@@ -3442,7 +3442,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "四川"
     },
@@ -3453,7 +3453,7 @@
       "departure_time": "19:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "贵州"
     },
@@ -3464,7 +3464,7 @@
       "departure_time": "08:10",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "黑龙江"
     },
@@ -3475,7 +3475,7 @@
       "departure_time": "08:10",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "海南"
     },
@@ -3530,7 +3530,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "河南"
     },
@@ -3552,7 +3552,7 @@
       "departure_time": "19:50",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江西",
       "arrival_province": "云南"
     },
@@ -3574,7 +3574,7 @@
       "departure_time": "19:10",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "青海",
       "arrival_province": "河南"
     },
@@ -3761,7 +3761,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "海南"
     },
@@ -3772,7 +3772,7 @@
       "departure_time": "19:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "海南"
     },
@@ -3970,7 +3970,7 @@
       "departure_time": "19:55",
       "schedule": "7",
       "date_range": "10.25-03.14",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "海南"
     },
@@ -3981,7 +3981,7 @@
       "departure_time": "19:55",
       "schedule": "135",
       "date_range": "10.26-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "海南"
     },
@@ -4047,7 +4047,7 @@
       "departure_time": "08:30",
       "schedule": "37",
       "date_range": "10.25-03.24",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "上海"
     },
@@ -4058,7 +4058,7 @@
       "departure_time": "08:30",
       "schedule": "12456",
       "date_range": "10.26-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "上海"
     },
@@ -4069,7 +4069,7 @@
       "departure_time": "19:35",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "天津"
     },
@@ -4146,7 +4146,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "陕西"
     },
@@ -4234,7 +4234,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "辽宁"
     },
@@ -4267,7 +4267,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "安徽"
     },
@@ -4278,7 +4278,7 @@
       "departure_time": "19:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "安徽"
     },
@@ -4300,7 +4300,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "广东"
     },
@@ -4322,7 +4322,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "福建"
     },
@@ -4366,7 +4366,7 @@
       "departure_time": "19:45",
       "schedule": "1357",
       "date_range": "10.25-01.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "新疆"
     },
@@ -4377,7 +4377,7 @@
       "departure_time": "08:50",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "福建"
     },
@@ -4388,7 +4388,7 @@
       "departure_time": "09:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "福建"
     },
@@ -4399,7 +4399,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "福建"
     },
@@ -4410,7 +4410,7 @@
       "departure_time": "19:25",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "贵州",
       "arrival_province": "福建"
     },
@@ -4476,7 +4476,7 @@
       "departure_time": "08:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "宁夏",
       "arrival_province": "辽宁"
     },
@@ -4531,7 +4531,7 @@
       "departure_time": "19:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "黑龙江",
       "arrival_province": "四川"
     },
@@ -4586,7 +4586,7 @@
       "departure_time": "19:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "黑龙江",
       "arrival_province": "广东"
     },
@@ -4619,7 +4619,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "黑龙江",
       "arrival_province": "内蒙古"
     },
@@ -4630,7 +4630,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "黑龙江",
       "arrival_province": "广西"
     },
@@ -4674,7 +4674,7 @@
       "departure_time": "19:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "黑龙江",
       "arrival_province": "河北"
     },
@@ -4707,7 +4707,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "黑龙江",
       "arrival_province": "天津"
     },
@@ -4729,7 +4729,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "黑龙江",
       "arrival_province": "陕西"
     },
@@ -4784,7 +4784,7 @@
       "departure_time": "19:30",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "黑龙江",
       "arrival_province": "河南"
     },
@@ -4828,7 +4828,7 @@
       "departure_time": "19:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "北京"
     },
@@ -4861,7 +4861,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "吉林"
     },
@@ -4883,7 +4883,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "湖南"
     },
@@ -4894,7 +4894,7 @@
       "departure_time": "19:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "湖南"
     },
@@ -4905,7 +4905,7 @@
       "departure_time": "19:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "湖南"
     },
@@ -4916,7 +4916,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "四川"
     },
@@ -4938,7 +4938,7 @@
       "departure_time": "09:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "湖南"
     },
@@ -4982,7 +4982,7 @@
       "departure_time": "08:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "湖北"
     },
@@ -5004,7 +5004,7 @@
       "departure_time": "19:35",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "福建"
     },
@@ -5048,7 +5048,7 @@
       "departure_time": "19:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "广西"
     },
@@ -5070,7 +5070,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "广西"
     },
@@ -5114,7 +5114,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "浙江"
     },
@@ -5191,7 +5191,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-01.15",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "江苏"
     },
@@ -5257,7 +5257,7 @@
       "departure_time": "08:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "山东"
     },
@@ -5268,7 +5268,7 @@
       "departure_time": "19:30",
       "schedule": "4",
       "date_range": "11.05-01.14",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "山东"
     },
@@ -5301,7 +5301,7 @@
       "departure_time": "08:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "江西"
     },
@@ -5367,7 +5367,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "山东"
     },
@@ -5400,7 +5400,7 @@
       "departure_time": "19:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "四川"
     },
@@ -5422,7 +5422,7 @@
       "departure_time": "09:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "江苏"
     },
@@ -5433,7 +5433,7 @@
       "departure_time": "08:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "江苏"
     },
@@ -5455,7 +5455,7 @@
       "departure_time": "19:55",
       "schedule": "6",
       "date_range": "10.31-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "广西"
     },
@@ -5466,7 +5466,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-01.15",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "广西"
     },
@@ -5477,7 +5477,7 @@
       "departure_time": "19:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "广西"
     },
@@ -5510,7 +5510,7 @@
       "departure_time": "19:30",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "广西"
     },
@@ -5554,7 +5554,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "11.01-12.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "海南"
     },
@@ -5565,7 +5565,7 @@
       "departure_time": "08:25",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "海南"
     },
@@ -5587,7 +5587,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "11.01-12.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "海南"
     },
@@ -5752,7 +5752,7 @@
       "departure_time": "19:40",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "重庆"
     },
@@ -5774,7 +5774,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "湖北"
     },
@@ -5829,7 +5829,7 @@
       "departure_time": "19:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "陕西"
     },
@@ -5851,7 +5851,7 @@
       "departure_time": "19:30",
       "schedule": "4",
       "date_range": "11.05-01.14",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "湖南"
     },
@@ -5895,7 +5895,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "河南"
     },
@@ -5928,7 +5928,7 @@
       "departure_time": "19:45",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "河南"
     },
@@ -6038,7 +6038,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "北京"
     },
@@ -6082,7 +6082,7 @@
       "departure_time": "19:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "重庆"
     },
@@ -6126,7 +6126,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "重庆"
     },
@@ -6247,7 +6247,7 @@
       "departure_time": "19:50",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "云南"
     },
@@ -6302,7 +6302,7 @@
       "departure_time": "19:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "海南"
     },
@@ -6368,7 +6368,7 @@
       "departure_time": "08:15",
       "schedule": "4",
       "date_range": "10.29-03.25",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "河北"
     },
@@ -6401,7 +6401,7 @@
       "departure_time": "19:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "福建"
     },
@@ -6456,7 +6456,7 @@
       "departure_time": "19:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "新疆"
     },
@@ -6533,7 +6533,7 @@
       "departure_time": "08:50",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "安徽",
       "arrival_province": "云南"
     },
@@ -6643,7 +6643,7 @@
       "departure_time": "08:25",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "湖南"
     },
@@ -6654,7 +6654,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -6676,7 +6676,7 @@
       "departure_time": "09:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -6720,7 +6720,7 @@
       "departure_time": "19:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "海南"
     },
@@ -6742,7 +6742,7 @@
       "departure_time": "19:30",
       "schedule": "13457",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "广东"
     },
@@ -6753,7 +6753,7 @@
       "departure_time": "19:30",
       "schedule": "26",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "广东"
     },
@@ -6764,7 +6764,7 @@
       "departure_time": "19:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "广东"
     },
@@ -6775,7 +6775,7 @@
       "departure_time": "19:50",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "新疆"
     },
@@ -6808,7 +6808,7 @@
       "departure_time": "08:30",
       "schedule": "135",
       "date_range": "10.26-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -6819,7 +6819,7 @@
       "departure_time": "19:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -6830,7 +6830,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "江苏"
     },
@@ -6841,7 +6841,7 @@
       "departure_time": "08:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "湖南"
     },
@@ -6874,7 +6874,7 @@
       "departure_time": "08:40",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "新疆"
     },
@@ -6918,7 +6918,7 @@
       "departure_time": "08:40",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "河南"
     },
@@ -6951,7 +6951,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "北京"
     },
@@ -6962,7 +6962,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -6973,7 +6973,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -7061,7 +7061,7 @@
       "departure_time": "19:10",
       "schedule": "26",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "湖北"
     },
@@ -7083,7 +7083,7 @@
       "departure_time": "19:10",
       "schedule": "26",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "陕西"
     },
@@ -7094,7 +7094,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "四川"
     },
@@ -7127,7 +7127,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "重庆"
     },
@@ -7138,7 +7138,7 @@
       "departure_time": "19:20",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "重庆"
     },
@@ -7182,7 +7182,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "海南"
     },
@@ -7226,7 +7226,7 @@
       "departure_time": "08:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "广西"
     },
@@ -7237,7 +7237,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "广西"
     },
@@ -7248,7 +7248,7 @@
       "departure_time": "19:50",
       "schedule": "1357",
       "date_range": "10.25-01.15",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "广西"
     },
@@ -7281,7 +7281,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "广东"
     },
@@ -7303,7 +7303,7 @@
       "departure_time": "19:50",
       "schedule": "1357",
       "date_range": "10.25-01.15",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "湖北"
     },
@@ -7358,7 +7358,7 @@
       "departure_time": "19:35",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "海南"
     },
@@ -7556,7 +7556,7 @@
       "departure_time": "08:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "福建"
     },
@@ -7644,7 +7644,7 @@
       "departure_time": "19:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "海南"
     },
@@ -7655,7 +7655,7 @@
       "departure_time": "08:35",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "浙江"
     },
@@ -7721,7 +7721,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "山东"
     },
@@ -7809,7 +7809,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "上海"
     },
@@ -7820,7 +7820,7 @@
       "departure_time": "08:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "上海"
     },
@@ -7897,7 +7897,7 @@
       "departure_time": "19:25",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "湖北"
     },
@@ -8062,7 +8062,7 @@
       "departure_time": "19:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "甘肃",
       "arrival_province": "北京"
     },
@@ -8084,7 +8084,7 @@
       "departure_time": "19:45",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "甘肃",
       "arrival_province": "海南"
     },
@@ -8095,7 +8095,7 @@
       "departure_time": "19:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "甘肃",
       "arrival_province": "广东"
     },
@@ -8106,7 +8106,7 @@
       "departure_time": "19:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "甘肃",
       "arrival_province": "新疆"
     },
@@ -8172,7 +8172,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "四川"
     },
@@ -8194,7 +8194,7 @@
       "departure_time": "19:40",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "重庆"
     },
@@ -8249,7 +8249,7 @@
       "departure_time": "19:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "山东"
     },
@@ -8260,7 +8260,7 @@
       "departure_time": "19:20",
       "schedule": "1357",
       "date_range": "10.25-01.15",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "山东"
     },
@@ -8293,7 +8293,7 @@
       "departure_time": "19:20",
       "schedule": "1357",
       "date_range": "10.25-01.15",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "四川"
     },
@@ -8326,7 +8326,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "湖北"
     },
@@ -8414,7 +8414,7 @@
       "departure_time": "19:50",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "甘肃",
       "arrival_province": "新疆"
     },
@@ -8469,7 +8469,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "新疆"
     },
@@ -8612,7 +8612,7 @@
       "departure_time": "19:45",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "山东"
     },
@@ -8623,7 +8623,7 @@
       "departure_time": "09:00",
       "schedule": "6",
       "date_range": "10.31-11.28",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "云南"
     },
@@ -8645,7 +8645,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江西",
       "arrival_province": "四川"
     },
@@ -8755,7 +8755,7 @@
       "departure_time": "19:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "四川",
       "arrival_province": "新疆"
     },
@@ -8777,7 +8777,7 @@
       "departure_time": "19:20",
       "schedule": "13567",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "江西"
     },
@@ -8832,7 +8832,7 @@
       "departure_time": "19:20",
       "schedule": "13567",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "云南"
     },
@@ -8898,7 +8898,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "云南"
     },
@@ -8942,7 +8942,7 @@
       "departure_time": "08:10",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广西",
       "arrival_province": "四川"
     },
@@ -9074,7 +9074,7 @@
       "departure_time": "08:10",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广西",
       "arrival_province": "甘肃"
     },
@@ -9118,7 +9118,7 @@
       "departure_time": "19:20",
       "schedule": "1357",
       "date_range": "10.25-01.15",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广西",
       "arrival_province": "山东"
     },
@@ -9184,7 +9184,7 @@
       "departure_time": "19:50",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广西",
       "arrival_province": "上海"
     },
@@ -9239,7 +9239,7 @@
       "departure_time": "19:20",
       "schedule": "24",
       "date_range": "10.27-10.29",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广西",
       "arrival_province": "江苏"
     },
@@ -9283,7 +9283,7 @@
       "departure_time": "19:40",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广西",
       "arrival_province": "河南"
     },
@@ -9338,7 +9338,7 @@
       "departure_time": "19:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "广东"
     },
@@ -9349,7 +9349,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "贵州"
     },
@@ -9360,7 +9360,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "江西"
     },
@@ -9382,7 +9382,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "浙江",
       "arrival_province": "陕西"
     },
@@ -9404,7 +9404,7 @@
       "departure_time": "19:30",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "福建"
     },
@@ -9437,7 +9437,7 @@
       "departure_time": "19:55",
       "schedule": "157",
       "date_range": "10.25-11.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "云南"
     },
@@ -9448,7 +9448,7 @@
       "departure_time": "19:20",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "云南"
     },
@@ -9481,7 +9481,7 @@
       "departure_time": "19:50",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "海南"
     },
@@ -9503,7 +9503,7 @@
       "departure_time": "19:20",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山东",
       "arrival_province": "河南"
     },
@@ -9525,7 +9525,7 @@
       "departure_time": "19:35",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "甘肃",
       "arrival_province": "新疆"
     },
@@ -9536,7 +9536,7 @@
       "departure_time": "19:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "北京"
     },
@@ -9580,7 +9580,7 @@
       "departure_time": "19:45",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "安徽"
     },
@@ -9591,7 +9591,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "11.01-12.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "海南"
     },
@@ -9646,7 +9646,7 @@
       "departure_time": "19:40",
       "schedule": "15",
       "date_range": "10.26-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "海南"
     },
@@ -9679,7 +9679,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "北京"
     },
@@ -9712,7 +9712,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "北京"
     },
@@ -9734,7 +9734,7 @@
       "departure_time": "08:55",
       "schedule": "357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "吉林"
     },
@@ -9745,7 +9745,7 @@
       "departure_time": "08:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "吉林"
     },
@@ -9888,7 +9888,7 @@
       "departure_time": "08:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "黑龙江"
     },
@@ -9921,7 +9921,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "11.01-12.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "海南"
     },
@@ -9932,7 +9932,7 @@
       "departure_time": "19:50",
       "schedule": "167",
       "date_range": "01.16-01.18",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "海南"
     },
@@ -9943,7 +9943,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "浙江"
     },
@@ -9965,7 +9965,7 @@
       "departure_time": "08:55",
       "schedule": "357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "安徽"
     },
@@ -10009,7 +10009,7 @@
       "departure_time": "08:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "内蒙古"
     },
@@ -10042,7 +10042,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "山东"
     },
@@ -10064,7 +10064,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-01.15",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "河南"
     },
@@ -10130,7 +10130,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "11.01-12.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "海南"
     },
@@ -10141,7 +10141,7 @@
       "departure_time": "19:50",
       "schedule": "167",
       "date_range": "01.16-01.18",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "海南"
     },
@@ -10174,7 +10174,7 @@
       "departure_time": "08:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "辽宁"
     },
@@ -10218,7 +10218,7 @@
       "departure_time": "08:25",
       "schedule": "234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "山西"
     },
@@ -10229,7 +10229,7 @@
       "departure_time": "08:25",
       "schedule": "1",
       "date_range": "10.26-03.22",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "山西"
     },
@@ -10251,7 +10251,7 @@
       "departure_time": "08:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "山西"
     },
@@ -10262,7 +10262,7 @@
       "departure_time": "19:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "天津"
     },
@@ -10317,7 +10317,7 @@
       "departure_time": "08:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "湖北"
     },
@@ -10328,7 +10328,7 @@
       "departure_time": "08:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "新疆"
     },
@@ -10405,7 +10405,7 @@
       "departure_time": "08:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "海南",
       "arrival_province": "陕西"
     },
@@ -10526,7 +10526,7 @@
       "departure_time": "08:30",
       "schedule": "7",
       "date_range": "10.25-03.21",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "北京"
     },
@@ -10537,7 +10537,7 @@
       "departure_time": "08:30",
       "schedule": "126",
       "date_range": "10.26-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "北京"
     },
@@ -10548,7 +10548,7 @@
       "departure_time": "08:30",
       "schedule": "345",
       "date_range": "10.28-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "北京"
     },
@@ -10559,7 +10559,7 @@
       "departure_time": "19:30",
       "schedule": "13457",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "北京"
     },
@@ -10570,7 +10570,7 @@
       "departure_time": "19:30",
       "schedule": "26",
       "date_range": "10.27-03.23",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "北京"
     },
@@ -10592,7 +10592,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "海南"
     },
@@ -10614,7 +10614,7 @@
       "departure_time": "19:30",
       "schedule": "123467",
       "date_range": "10.25-03.25",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "北京"
     },
@@ -10625,7 +10625,7 @@
       "departure_time": "19:30",
       "schedule": "5",
       "date_range": "10.30-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "北京"
     },
@@ -10746,7 +10746,7 @@
       "departure_time": "08:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "海南"
     },
@@ -10757,7 +10757,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "广东"
     },
@@ -10801,7 +10801,7 @@
       "departure_time": "08:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "广东"
     },
@@ -10867,7 +10867,7 @@
       "departure_time": "08:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "上海",
       "arrival_province": "广东"
     },
@@ -10889,7 +10889,7 @@
       "departure_time": "19:30",
       "schedule": "123567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "广东"
     },
@@ -10900,7 +10900,7 @@
       "departure_time": "19:30",
       "schedule": "4",
       "date_range": "10.29-03.25",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "广东"
     },
@@ -10911,7 +10911,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "辽宁",
       "arrival_province": "安徽"
     },
@@ -10944,7 +10944,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "北京"
     },
@@ -11131,7 +11131,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "浙江"
     },
@@ -11142,7 +11142,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "内蒙古"
     },
@@ -11153,7 +11153,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "内蒙古"
     },
@@ -11252,7 +11252,7 @@
       "departure_time": "19:20",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "江苏"
     },
@@ -11439,7 +11439,7 @@
       "departure_time": "19:20",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "陕西"
     },
@@ -11560,7 +11560,7 @@
       "departure_time": "19:50",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河北",
       "arrival_province": "云南"
     },
@@ -11582,7 +11582,7 @@
       "departure_time": "19:05",
       "schedule": "246",
       "date_range": "10.29-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河北",
       "arrival_province": "云南"
     },
@@ -11681,7 +11681,7 @@
       "departure_time": "19:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山西",
       "arrival_province": "湖南"
     },
@@ -11703,7 +11703,7 @@
       "departure_time": "08:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山西",
       "arrival_province": "福建"
     },
@@ -11791,7 +11791,7 @@
       "departure_time": "08:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "山西",
       "arrival_province": "湖北"
     },
@@ -11868,7 +11868,7 @@
       "departure_time": "09:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "湖北"
     },
@@ -11890,7 +11890,7 @@
       "departure_time": "08:20",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "安徽"
     },
@@ -12077,7 +12077,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "海南"
     },
@@ -12099,7 +12099,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "湖南"
     },
@@ -12110,7 +12110,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "新疆"
     },
@@ -12121,7 +12121,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "新疆"
     },
@@ -12154,7 +12154,7 @@
       "departure_time": "08:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "云南"
     },
@@ -12165,7 +12165,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "海南"
     },
@@ -12220,7 +12220,7 @@
       "departure_time": "19:20",
       "schedule": "2",
       "date_range": "10.27-03.23",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "新疆"
     },
@@ -12231,7 +12231,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "新疆"
     },
@@ -12242,7 +12242,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "新疆"
     },
@@ -12264,7 +12264,7 @@
       "departure_time": "08:20",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "福建"
     },
@@ -12286,7 +12286,7 @@
       "departure_time": "19:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "陕西"
     },
@@ -12297,7 +12297,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "陕西"
     },
@@ -12330,7 +12330,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "云南"
     },
@@ -12341,7 +12341,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "天津",
       "arrival_province": "山东"
     },
@@ -12407,7 +12407,7 @@
       "departure_time": "19:10",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -12462,7 +12462,7 @@
       "departure_time": "19:10",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -12528,7 +12528,7 @@
       "departure_time": "19:45",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "重庆",
       "arrival_province": "新疆"
     },
@@ -12561,7 +12561,7 @@
       "departure_time": "19:45",
       "schedule": "4",
       "date_range": "10.29-03.25",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "北京"
     },
@@ -12583,7 +12583,7 @@
       "departure_time": "19:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "内蒙古"
     },
@@ -12594,7 +12594,7 @@
       "departure_time": "19:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "黑龙江"
     },
@@ -12638,7 +12638,7 @@
       "departure_time": "19:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "内蒙古"
     },
@@ -12671,7 +12671,7 @@
       "departure_time": "19:10",
       "schedule": "137",
       "date_range": "10.25-11.30",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "广东"
     },
@@ -12693,7 +12693,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-11.28",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "浙江"
     },
@@ -12715,7 +12715,7 @@
       "departure_time": "08:55",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "福建"
     },
@@ -12825,7 +12825,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "河南"
     },
@@ -12836,7 +12836,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "四川"
     },
@@ -12847,7 +12847,7 @@
       "departure_time": "19:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "重庆"
     },
@@ -12891,7 +12891,7 @@
       "departure_time": "08:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "安徽"
     },
@@ -12924,7 +12924,7 @@
       "departure_time": "19:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "广东"
     },
@@ -12935,7 +12935,7 @@
       "departure_time": "08:40",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "宁夏"
     },
@@ -12946,7 +12946,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "浙江"
     },
@@ -12957,7 +12957,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "浙江"
     },
@@ -12979,7 +12979,7 @@
       "departure_time": "08:05",
       "schedule": "2",
       "date_range": "10.27-03.23",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "陕西"
     },
@@ -13001,7 +13001,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "江苏"
     },
@@ -13012,7 +13012,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "内蒙古"
     },
@@ -13056,7 +13056,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "新疆"
     },
@@ -13067,7 +13067,7 @@
       "departure_time": "19:45",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "新疆"
     },
@@ -13078,7 +13078,7 @@
       "departure_time": "19:40",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "新疆"
     },
@@ -13089,7 +13089,7 @@
       "departure_time": "08:25",
       "schedule": "357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "新疆"
     },
@@ -13122,7 +13122,7 @@
       "departure_time": "08:05",
       "schedule": "357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "甘肃"
     },
@@ -13133,7 +13133,7 @@
       "departure_time": "08:15",
       "schedule": "1",
       "date_range": "10.26-03.22",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "甘肃"
     },
@@ -13144,7 +13144,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "甘肃"
     },
@@ -13177,7 +13177,7 @@
       "departure_time": "09:00",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "江苏"
     },
@@ -13188,7 +13188,7 @@
       "departure_time": "08:05",
       "schedule": "357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "江苏"
     },
@@ -13199,7 +13199,7 @@
       "departure_time": "08:15",
       "schedule": "1",
       "date_range": "10.26-03.22",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "江苏"
     },
@@ -13210,7 +13210,7 @@
       "departure_time": "19:40",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "广东"
     },
@@ -13221,7 +13221,7 @@
       "departure_time": "19:50",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "广东"
     },
@@ -13276,7 +13276,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "重庆"
     },
@@ -13309,7 +13309,7 @@
       "departure_time": "08:05",
       "schedule": "2",
       "date_range": "10.27-03.23",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "浙江"
     },
@@ -13320,7 +13320,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "福建"
     },
@@ -13331,7 +13331,7 @@
       "departure_time": "08:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "福建"
     },
@@ -13342,7 +13342,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "陕西"
     },
@@ -13353,7 +13353,7 @@
       "departure_time": "08:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "新疆"
     },
@@ -13408,7 +13408,7 @@
       "departure_time": "19:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "甘肃"
     },
@@ -13419,7 +13419,7 @@
       "departure_time": "08:30",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "广东"
     },
@@ -13441,7 +13441,7 @@
       "departure_time": "08:30",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "河南"
     },
@@ -13452,7 +13452,7 @@
       "departure_time": "08:40",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "新疆",
       "arrival_province": "河南"
     },
@@ -13529,7 +13529,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "湖南"
     },
@@ -13540,7 +13540,7 @@
       "departure_time": "08:15",
       "schedule": "2",
       "date_range": "10.27-03.23",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "湖南"
     },
@@ -13584,7 +13584,7 @@
       "departure_time": "08:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "贵州"
     },
@@ -13606,7 +13606,7 @@
       "departure_time": "08:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "黑龙江"
     },
@@ -13650,7 +13650,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "贵州"
     },
@@ -13683,7 +13683,7 @@
       "departure_time": "08:15",
       "schedule": "12357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "新疆"
     },
@@ -13694,7 +13694,7 @@
       "departure_time": "19:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "陕西"
     },
@@ -13738,7 +13738,7 @@
       "departure_time": "08:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "福建",
       "arrival_province": "浙江"
     },
@@ -13760,7 +13760,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "内蒙古"
     },
@@ -13804,7 +13804,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-01.16",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "贵州"
     },
@@ -13881,7 +13881,7 @@
       "departure_time": "19:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "重庆"
     },
@@ -13892,7 +13892,7 @@
       "departure_time": "08:15",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "云南"
     },
@@ -13925,7 +13925,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "福建"
     },
@@ -13958,7 +13958,7 @@
       "departure_time": "08:30",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "广东"
     },
@@ -13991,7 +13991,7 @@
       "departure_time": "19:20",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "广西"
     },
@@ -14035,7 +14035,7 @@
       "departure_time": "08:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "海南"
     },
@@ -14068,7 +14068,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-01.16",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "海南"
     },
@@ -14145,7 +14145,7 @@
       "departure_time": "08:10",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "浙江"
     },
@@ -14167,7 +14167,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "湖南"
     },
@@ -14222,7 +14222,7 @@
       "departure_time": "08:05",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "广东"
     },
@@ -14233,7 +14233,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "内蒙古"
     },
@@ -14288,7 +14288,7 @@
       "departure_time": "19:05",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "云南"
     },
@@ -14420,7 +14420,7 @@
       "departure_time": "08:10",
       "schedule": "12357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "广东"
     },
@@ -14431,7 +14431,7 @@
       "departure_time": "08:10",
       "schedule": "46",
       "date_range": "10.29-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "广东"
     },
@@ -14442,7 +14442,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "浙江"
     },
@@ -14530,7 +14530,7 @@
       "departure_time": "08:15",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "福建"
     },
@@ -14629,7 +14629,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "陕西"
     },
@@ -14662,7 +14662,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "湖南"
     },
@@ -14739,7 +14739,7 @@
       "departure_time": "08:40",
       "schedule": "7",
       "date_range": "10.25-03.21",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "内蒙古"
     },
@@ -14761,7 +14761,7 @@
       "departure_time": "08:40",
       "schedule": "7",
       "date_range": "10.25-03.21",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "内蒙古",
       "arrival_province": "江苏"
     },
@@ -14926,7 +14926,7 @@
       "departure_time": "08:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "云南"
     },
@@ -14970,7 +14970,7 @@
       "departure_time": "08:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "云南",
       "arrival_province": "江西"
     },
@@ -15003,7 +15003,7 @@
       "departure_time": "19:20",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "贵州"
     },
@@ -15014,7 +15014,7 @@
       "departure_time": "19:00",
       "schedule": "1234567",
       "date_range": "10.25-01.16",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "海南"
     },
@@ -15058,7 +15058,7 @@
       "departure_time": "19:05",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "海南"
     },
@@ -15091,7 +15091,7 @@
       "departure_time": "19:20",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "湖北"
     },
@@ -15102,7 +15102,7 @@
       "departure_time": "19:30",
       "schedule": "37",
       "date_range": "10.25-03.24",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "福建"
     },
@@ -15113,7 +15113,7 @@
       "departure_time": "19:30",
       "schedule": "37",
       "date_range": "10.25-03.24",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "海南"
     },
@@ -15124,7 +15124,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "江苏",
       "arrival_province": "陕西"
     },
@@ -15179,7 +15179,7 @@
       "departure_time": "19:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "湖北",
       "arrival_province": "贵州"
     },
@@ -15300,7 +15300,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "陕西"
     },
@@ -15355,7 +15355,7 @@
       "departure_time": "08:15",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "湖南"
     },
@@ -15410,7 +15410,7 @@
       "departure_time": "09:00",
       "schedule": "13",
       "date_range": "10.26-03.24",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "山东"
     },
@@ -15421,7 +15421,7 @@
       "departure_time": "08:20",
       "schedule": "46",
       "date_range": "10.29-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "山东"
     },
@@ -15432,7 +15432,7 @@
       "departure_time": "08:20",
       "schedule": "46",
       "date_range": "10.29-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "江西"
     },
@@ -15487,7 +15487,7 @@
       "departure_time": "19:45",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "陕西"
     },
@@ -15498,7 +15498,7 @@
       "departure_time": "19:55",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "陕西"
     },
@@ -15542,7 +15542,7 @@
       "departure_time": "08:15",
       "schedule": "57",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "陕西",
       "arrival_province": "湖南"
     },
@@ -15652,7 +15652,7 @@
       "departure_time": "19:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "贵州"
     },
@@ -15685,7 +15685,7 @@
       "departure_time": "19:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "陕西"
     },
@@ -15729,7 +15729,7 @@
       "departure_time": "19:55",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "重庆"
     },
@@ -15773,7 +15773,7 @@
       "departure_time": "08:20",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "福建"
     },
@@ -15806,7 +15806,7 @@
       "departure_time": "19:35",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "广东"
     },
@@ -15894,7 +15894,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-12.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "新疆"
     },
@@ -15971,7 +15971,7 @@
       "departure_time": "08:40",
       "schedule": "1234567",
       "date_range": "10.25-12.31",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "甘肃"
     },
@@ -16026,7 +16026,7 @@
       "departure_time": "19:40",
       "schedule": "1234567",
       "date_range": "01.01-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "福建"
     },
@@ -16103,7 +16103,7 @@
       "departure_time": "19:40",
       "schedule": "1234567",
       "date_range": "10.25-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "河南",
       "arrival_province": "广东"
     },
@@ -16224,7 +16224,7 @@
       "departure_time": "09:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "宁夏",
       "arrival_province": "新疆"
     },
@@ -16257,7 +16257,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "辽宁"
     },
@@ -16279,7 +16279,7 @@
       "departure_time": "19:00",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "安徽"
     },
@@ -16290,7 +16290,7 @@
       "departure_time": "19:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "贵州"
     },
@@ -16312,7 +16312,7 @@
       "departure_time": "19:00",
       "schedule": "246",
       "date_range": "10.27-03.27",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "陕西"
     },
@@ -16323,7 +16323,7 @@
       "departure_time": "19:30",
       "schedule": "1357",
       "date_range": "10.25-03.26",
-      "product": "666/2666",
+      "product": "2666",
       "departure_province": "广东",
       "arrival_province": "陕西"
     },

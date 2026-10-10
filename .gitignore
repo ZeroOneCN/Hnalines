@@ -1,0 +1,14 @@
+# 原始数据文件（含业务来源信息，不入库）
+*.xlsx
+!~$*.xlsx
+
+# 项目本地管理文档
+说明文档.md
+
+# Python
+__pycache__/
+*.pyc
+
+# 临时文件
+*.tmp
+.git_commit_msg.txt

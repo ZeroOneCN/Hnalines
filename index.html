@@ -10,230 +10,190 @@
     <style>
         :root {
             --hna-primary: #e60012;
-            --hna-secondary: #cfa76e;
             --hna-dark: #b0000e;
-            --hna-bg: #f5f6f8;
+            --hna-border: #dee2e6;
         }
         body {
-            background-color: var(--hna-bg);
+            background: #fff;
+            color: #212529;
+            font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
         }
         .navbar-hna {
-            background: linear-gradient(90deg, var(--hna-dark), var(--hna-primary));
-            box-shadow: 0 2px 8px rgba(230, 0, 18, 0.25);
+            background-color: var(--hna-primary);
         }
-        .season-banner {
-            background: linear-gradient(90deg, #fff5f5, #ffffff);
-            border: 1px solid #f5c6cb;
-            border-left: 4px solid var(--hna-primary);
-            border-radius: 10px;
+        .navbar-hna .navbar-brand { font-size: 1.05rem; }
+        .notice-bar {
+            background: #f8f9fa;
+            border: 1px solid var(--hna-border);
+            border-radius: 4px;
+            padding: 0.55rem 0.9rem;
+            font-size: 0.9rem;
         }
         .stats-card {
-            background: #fff;
-            border: 1px solid #eceef1;
-            border-radius: 12px;
-            transition: box-shadow 0.2s, transform 0.2s;
+            background: #f8f9fa;
+            border: 1px solid var(--hna-border);
+            border-radius: 4px;
+            text-align: center;
+            padding: 0.9rem 0.5rem;
         }
-        .stats-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transform: translateY(-2px);
-        }
-        .stats-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            flex-shrink: 0;
+        .stats-card .label {
+            font-size: 0.875rem;
+            color: #495057;
         }
         .stats-card .num {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 700;
-            line-height: 1.1;
+            line-height: 1.25;
         }
-        .filter-card, .table-card {
-            background: #fff;
-            border: 1px solid #eceef1;
-            border-radius: 12px;
+        .stats-card .sub {
+            font-size: 0.8rem;
+            color: #6c757d;
         }
-        .btn-hna { background-color: var(--hna-primary); color: #fff; border-color: var(--hna-primary); }
-        .btn-hna:hover { background-color: var(--hna-dark); border-color: var(--hna-dark); color: #fff; }
-        .btn-outline-hna { color: var(--hna-primary); border-color: var(--hna-primary); }
-        .btn-outline-hna:hover { background-color: var(--hna-primary); color: #fff; }
-        .product-chip-group .btn { padding: 0.2rem 0.75rem; }
+        .table-hna { font-size: 0.875rem; }
         .table-hna thead th {
             position: sticky;
             top: 0;
             z-index: 10;
-            background: #fff;
-            border-bottom: 2px solid var(--hna-primary) !important;
+            background: #f8f9fa;
+            border-bottom: 2px solid var(--hna-border);
             white-space: nowrap;
+            font-weight: 600;
+            color: #495057;
             cursor: pointer;
             user-select: none;
         }
-        .table-hna thead th .sort-icon { font-size: 0.8em; color: #adb5bd; }
+        .table-hna thead th:hover { color: var(--hna-primary); }
+        .table-hna thead th .sort-icon { font-size: 0.75em; color: #ced4da; }
         .table-hna thead th.sorted-asc .sort-icon,
         .table-hna thead th.sorted-desc .sort-icon { color: var(--hna-primary); }
         .table-hna td { white-space: nowrap; vertical-align: middle; }
-        .table-hna tbody tr:hover { background-color: #fff5f5; }
-        .schedule-badge {
-            font-size: 0.78em;
-            background: #eef2f7;
-            color: #495057;
-            border-radius: 6px;
-            padding: 0.15rem 0.4rem;
-        }
-        .product-badge {
-            font-size: 0.78em;
-            background: #fdecec;
-            color: var(--hna-primary);
-            border: 1px solid #f5c6cb;
-            border-radius: 6px;
-            padding: 0.1rem 0.45rem;
-        }
-        .date-range-badge {
-            font-size: 0.78em;
-            background: #f0f7f0;
-            color: #2e7d32;
-            border-radius: 6px;
-            padding: 0.1rem 0.45rem;
-        }
-        .pagination .page-link { color: var(--hna-primary); border-color: #e9ecef; }
+        .table-hna tbody tr:hover { background-color: #f8f9fa; }
+        .btn-hna { background-color: var(--hna-primary); color: #fff; border-color: var(--hna-primary); }
+        .btn-hna:hover { background-color: var(--hna-dark); border-color: var(--hna-dark); color: #fff; }
+        .btn-outline-hna { color: var(--hna-primary); border-color: var(--hna-primary); }
+        .btn-outline-hna:hover { background-color: var(--hna-primary); color: #fff; }
+        .product-chip-group .btn { padding: 0.2rem 0.8rem; }
+        .pagination .page-link { color: var(--hna-primary); }
         .pagination .page-link:hover { color: #fff; background-color: var(--hna-primary); border-color: var(--hna-primary); }
         .page-item.active .page-link { background-color: var(--hna-primary); border-color: var(--hna-primary); }
         .page-item.disabled .page-link { color: #bbb; }
-        .modal-header { border-bottom-color: #f5c6cb; }
-        .bg-hna { background-color: var(--hna-primary) !important; }
+        .modal-header { border-bottom-color: var(--hna-border); }
         .text-hna { color: var(--hna-primary) !important; }
+        .bg-hna { background-color: var(--hna-primary) !important; }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand navbar-dark navbar-hna">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <i class="bi bi-airplane-engines"></i> 海航随心飞航线
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-airplane"></i> 海航随心飞航线
             </a>
-            <span class="navbar-text text-white-50 d-none d-md-inline">2026冬春航季 · 海航PLUS适用航班</span>
+            <span class="navbar-text text-white-50 d-none d-md-inline small">2026冬春航季 · 海航PLUS适用航班</span>
         </div>
     </nav>
 
     <div class="container mt-3 mb-5">
-        <div class="season-banner px-3 py-2 mb-3 d-flex flex-wrap align-items-center gap-2">
-            <i class="bi bi-info-circle text-hna"></i>
-            <strong>海航 PLUS 会员权益卡适用航班（2026冬春航季：2026.10.25 - 2027.03.27）</strong>
-            <span class="text-muted small ms-auto">数据来源于海南航空官方发布，具体票务信息以官方为准，本站仅供参考</span>
+        <div class="notice-bar mb-2">
+            <strong>海航 PLUS 会员权益卡适用航班参考列表</strong>（2026冬春航季：2026.10.25 - 2027.03.27）
+        </div>
+        <div class="notice-bar mb-3">
+            数据采集于海南航空官方，具体票务信息以官方为准，本站仅供参考
         </div>
 
-        <div class="row g-3 mb-3">
+        <div class="row mb-3 g-2">
             <div class="col-md-4">
-                <div class="stats-card px-3 py-2 d-flex align-items-center gap-3">
-                    <div class="stats-icon bg-danger bg-opacity-10 text-hna"><i class="bi bi-collection"></i></div>
-                    <div>
-                        <div class="text-muted small">总航线数</div>
-                        <div class="num" id="total-flights">-</div>
-                    </div>
+                <div class="stats-card">
+                    <div class="label"><i class="bi bi-collection"></i> 总航线数</div>
+                    <div class="num" id="total-flights">-</div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="stats-card px-3 py-2 d-flex align-items-center gap-3">
-                    <div class="stats-icon bg-warning bg-opacity-10 text-warning"><i class="bi bi-calendar3"></i></div>
-                    <div>
-                        <div class="text-muted small">数据版本</div>
-                        <div class="num fs-5" id="data-version">-</div>
-                    </div>
+                <div class="stats-card">
+                    <div class="label"><i class="bi bi-calendar"></i> 数据版本</div>
+                    <div class="num fs-4" id="data-version">-</div>
+                    <div class="sub" id="season-text"></div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="stats-card px-3 py-2 d-flex align-items-center gap-3">
-                    <div class="stats-icon bg-success bg-opacity-10 text-success"><i class="bi bi-geo-alt"></i></div>
-                    <div>
-                        <div class="text-muted small">覆盖省份</div>
-                        <div class="num" id="total-provinces">-</div>
-                    </div>
+                <div class="stats-card">
+                    <div class="label"><i class="bi bi-geo-alt"></i> 覆盖省份</div>
+                    <div class="num" id="total-provinces">-</div>
                 </div>
             </div>
         </div>
 
-        <div class="filter-card p-3 mb-3">
-            <div class="row g-2 mb-2">
-                <div class="col-lg-4 col-md-6">
-                    <div class="input-group input-group-sm">
-                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                        <input type="text" id="search-input" class="form-control" placeholder="搜索航班号 / 城市 / 省份，实时筛选">
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <select id="province-filter" class="form-select form-select-sm">
-                        <option value="all">所有省份</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <select id="dep-city-filter" class="form-select form-select-sm">
-                        <option value="all">所有出港城市</option>
-                    </select>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <select id="arr-city-filter" class="form-select form-select-sm">
-                        <option value="all">所有到港城市</option>
-                    </select>
-                </div>
+        <div class="row g-2 mb-2">
+            <div class="col-md-6 col-lg-4">
+                <select id="province-filter" class="form-select">
+                    <option value="all">所有省份</option>
+                </select>
             </div>
-            <div class="row g-2 align-items-center">
-                <div class="col-lg-6 d-flex align-items-center flex-wrap gap-2">
-                    <span class="small text-muted"><i class="bi bi-tag"></i> 产品:</span>
-                    <div class="product-chip-group btn-group" role="group">
-                        <button type="button" class="btn btn-sm btn-outline-hna" data-product="all" id="product-all">全部</button>
-                        <button type="button" class="btn btn-sm btn-outline-hna" data-product="666" id="product-666">666</button>
-                        <button type="button" class="btn btn-sm btn-outline-hna" data-product="2666" id="product-2666">2666</button>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex justify-content-lg-end align-items-center gap-2">
-                    <span class="small text-muted" id="result-count"></span>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="resetFilters()" title="清空所有筛选条件">
-                        <i class="bi bi-arrow-counterclockwise"></i> 重置筛选
-                    </button>
-                    <button class="btn btn-sm btn-outline-hna" onclick="loadStatistics()" title="查看各省份航线分布统计">
-                        <i class="bi bi-bar-chart"></i> 统计
-                    </button>
+            <div class="col-md-6 col-lg-4">
+                <div class="input-group">
+                    <input type="text" id="search-input" class="form-control" placeholder="搜索航班号、出发地、目的地...">
                 </div>
             </div>
         </div>
-
-        <div class="table-card p-2">
-            <div id="loading" class="text-center py-5">
-                <div class="spinner-border text-hna" role="status">
-                    <span class="visually-hidden">加载中...</span>
+        <div class="row g-2 mb-3 align-items-center">
+            <div class="col-md-4 col-lg-3">
+                <select id="dep-city-filter" class="form-select">
+                    <option value="all">所有出港城市</option>
+                </select>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <select id="arr-city-filter" class="form-select">
+                    <option value="all">所有到港城市</option>
+                </select>
+            </div>
+            <div class="col-md-4 col-lg-6 d-flex justify-content-md-end align-items-center flex-wrap gap-2">
+                <span class="text-muted small">产品:</span>
+                <div class="product-chip-group btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-hna" data-product="all" id="product-all">所有</button>
+                    <button type="button" class="btn btn-sm btn-outline-hna" data-product="666" id="product-666">666</button>
+                    <button type="button" class="btn btn-sm btn-outline-hna" data-product="2666" id="product-2666">2666</button>
                 </div>
-                <p class="mt-2 text-muted">正在加载航线数据...</p>
+                <span class="text-muted small" id="result-count"></span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="resetFilters()" title="清空所有筛选条件">
+                    <i class="bi bi-arrow-counterclockwise"></i> 重置
+                </button>
+                <button class="btn btn-sm btn-outline-hna" onclick="loadStatistics()" title="查看各省份航线分布统计">
+                    <i class="bi bi-bar-chart"></i> 查看统计
+                </button>
             </div>
-            <div class="table-responsive" id="table-wrap" style="display: none; max-height: 62vh;">
-                <table class="table table-sm table-hover table-hna mb-0" id="flights-table">
-                    <thead>
-                        <tr>
-                            <th data-sort="flight_number">航班号 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                            <th data-sort="departure_city">出港城市 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                            <th data-sort="arrival_city">到港城市 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                            <th data-sort="departure_time">出发时刻 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                            <th data-sort="schedule">班期 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                            <th data-sort="date_range">适用日期段 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                            <th data-sort="product">产品 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                            <th data-sort="departure_province">出港省份 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                            <th data-sort="arrival_province">到港省份 <i class="bi bi-arrow-down-up sort-icon"></i></th>
-                        </tr>
-                    </thead>
-                    <tbody id="flights-container"></tbody>
-                </table>
+        </div>
+
+        <div id="loading" class="text-center py-5">
+            <div class="spinner-border text-hna" role="status">
+                <span class="visually-hidden">加载中...</span>
             </div>
-            <div id="pagination" class="text-center my-2" style="display: none;"></div>
-            <div id="no-data" class="text-center py-5" style="display: none;">
-                <i class="bi bi-inbox text-muted" style="font-size: 3rem;"></i>
-                <p class="text-muted mb-0">暂无符合条件的航线数据</p>
-            </div>
+            <p class="mt-2 text-muted">正在加载航线数据...</p>
+        </div>
+        <div class="table-responsive" id="table-wrap" style="display: none; max-height: 64vh;">
+            <table class="table table-sm table-striped table-hover table-hna mb-0" id="flights-table">
+                <thead>
+                    <tr>
+                        <th data-sort="flight_number">航班号 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                        <th data-sort="departure_city">出港城市 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                        <th data-sort="arrival_city">到港城市 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                        <th data-sort="departure_time">出发时刻 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                        <th data-sort="schedule">班期 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                        <th data-sort="date_range">适用日期段 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                        <th data-sort="product">产品 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                        <th data-sort="departure_province">出港省份 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                        <th data-sort="arrival_province">到港省份 <i class="bi bi-arrow-down-up sort-icon"></i></th>
+                    </tr>
+                </thead>
+                <tbody id="flights-container"></tbody>
+            </table>
+        </div>
+        <div id="pagination" class="text-center my-3" style="display: none;"></div>
+        <div id="no-data" class="text-center py-5" style="display: none;">
+            <i class="bi bi-inbox text-muted" style="font-size: 3rem;"></i>
+            <p class="text-muted mb-0">暂无符合条件的航线数据</p>
         </div>
 
         <footer class="text-center text-muted small mt-4">
-            <i class="bi bi-airplane"></i> 海航随心飞航线查询 · 数据版本 <span id="footer-version">-</span>
+            海航随心飞航线查询 · 数据版本 <span id="footer-version">-</span>
         </footer>
     </div>
 
@@ -241,7 +201,7 @@
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-hna"><i class="bi bi-bar-chart"></i> 航线统计信息</h5>
+                    <h5 class="modal-title text-hna">航线统计信息</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -252,6 +212,6 @@
     </div>
 
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="app.js?v=20261010"></script>
+    <script src="app.js?v=20261011"></script>
 </body>
 </html>
