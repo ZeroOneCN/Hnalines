@@ -1,94 +1,129 @@
 /**
  * 海航随心飞航线 - 前端逻辑
+ * 数据源：hainan_airlines_data.json（2026冬春航季）
  */
 
 const DATA_URL = 'hainan_airlines_data.json';
+const PAGE_SIZE = 50;
+const WEEK_MAP = { '1': '一', '2': '二', '3': '三', '4': '四', '5': '五', '6': '六', '7': '日' };
 
 let currentPage = 1;
-const pageSize = 30;
 let totalPages = 0;
-let currentFlights = [];
-let allData = { flights: [], last_update: '未知', total_flights: 0 };
-let provinces = new Set();
-let depCities = new Set();
-let arrCities = new Set();
-let products = new Set();
+let allData = { flights: [], data_version: '未知', total_flights: 0 };
+let filteredFlights = [];   // 当前筛选+排序后的完整列表
+let sortKey = null;         // null 表示保持数据原始顺序（Excel 已按出港城市 A-Z 排序）
+let sortDir = 1;            // 1 升序 / -1 降序
+let selectedProduct = 'all';
+let statisticsModal = null;
+let searchTimer = null;
 
-// 页面加载时获取数据
-document.addEventListener('DOMContentLoaded', function() {
+// 页面加载完成后初始化数据与事件
+document.addEventListener('DOMContentLoaded', function () {
+    statisticsModal = new bootstrap.Modal(document.getElementById('statisticsModal'));
+    bindEvents();
     loadData();
 });
 
-// 加载数据
+/**
+ * 绑定页面交互事件（筛选下拉、搜索防抖、产品按钮、表头排序）
+ * 参数：无
+ * 返回值：无
+ */
+function bindEvents() {
+    ['province-filter', 'dep-city-filter', 'arr-city-filter'].forEach(function (id) {
+        document.getElementById(id).addEventListener('change', function () { loadFlights(1); });
+    });
+
+    // 搜索输入实时筛选（200ms 防抖，避免频繁渲染）
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', function () {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(function () { loadFlights(1); }, 200);
+    });
+    searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { clearTimeout(searchTimer); loadFlights(1); }
+    });
+
+    // 产品筛选按钮（事件委托，兼容动态按钮）
+    document.querySelector('.product-chip-group').addEventListener('click', function (e) {
+        const btn = e.target.closest('button[data-product]');
+        if (btn) setProductSelection(btn.dataset.product);
+    });
+
+    // 表头排序
+    document.querySelectorAll('#flights-table thead th[data-sort]').forEach(function (th) {
+        th.addEventListener('click', function () { setSortKey(th.dataset.sort); });
+    });
+}
+
+/**
+ * 加载航线数据并初始化筛选器与统计卡片
+ * 参数：无
+ * 返回值：无
+ */
 function loadData() {
-    showLoading();
     fetch(DATA_URL)
-        .then(response => response.json())
-        .then(data => {
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
             allData = data;
+            // 预生成小写搜索索引，避免每次筛选重复 toLowerCase
+            allData.flights.forEach(function (f) {
+                f._search = [f.flight_number, f.departure_city, f.arrival_city,
+                    f.departure_province, f.arrival_province, f.product].join(' ').toLowerCase();
+            });
             processFilters(data);
             updateStats(data);
+            document.getElementById('footer-version').textContent = data.data_version || '未知';
             loadFlights(1);
         })
-        .catch(error => {
-            console.error('加载数据失败:', error);
+        .catch(function (err) {
+            console.error('加载数据失败:', err);
             hideLoading();
             document.getElementById('no-data').style.display = 'block';
         });
 }
 
-// 处理筛选器数据
+/**
+ * 根据数据填充省份/城市筛选下拉框
+ * 参数：data - 航线数据对象 { flights: [...] }
+ * 返回值：无
+ */
 function processFilters(data) {
-    provinces = new Set();
-    depCities = new Set();
-    arrCities = new Set();
-    products = new Set();
+    const provinces = new Set();
+    const depCities = new Set();
+    const arrCities = new Set();
 
-    data.flights.forEach(flight => {
-        provinces.add(flight.departure_province);
-        provinces.add(flight.arrival_province);
-        depCities.add(flight.departure_city);
-        arrCities.add(flight.arrival_city);
-        products.add(flight.product);
+    data.flights.forEach(function (f) {
+        provinces.add(f.departure_province);
+        provinces.add(f.arrival_province);
+        depCities.add(f.departure_city);
+        arrCities.add(f.arrival_city);
     });
 
-    // 填充省份筛选
-    const provinceFilter = document.getElementById('province-filter');
-    provinceFilter.innerHTML = '<option value="all">所有省份</option>';
-    sortPinyin(provinces).forEach(province => {
-        provinceFilter.innerHTML += `<option value="${province}">${province}</option>`;
-    });
-
-    // 填充出发城市筛选
-    const depCityFilter = document.getElementById('dep-city-filter');
-    depCityFilter.innerHTML = '<option value="all">所有出港城市</option>';
-    sortPinyin(depCities).forEach(city => {
-        depCityFilter.innerHTML += `<option value="${city}">${city}</option>`;
-    });
-
-    // 填充到达城市筛选
-    const arrCityFilter = document.getElementById('arr-city-filter');
-    arrCityFilter.innerHTML = '<option value="all">所有到港城市</option>';
-    sortPinyin(arrCities).forEach(city => {
-        arrCityFilter.innerHTML += `<option value="${city}">${city}</option>`;
-    });
-
-    // 绑定事件
-    provinceFilter.addEventListener('change', () => loadFlights(1));
-    depCityFilter.addEventListener('change', () => loadFlights(1));
-    arrCityFilter.addEventListener('change', () => loadFlights(1));
-
-    // 产品按钮事件
-    document.getElementById('product-all').addEventListener('click', () => setProductSelection('all'));
-    document.getElementById('product-666').addEventListener('click', () => setProductSelection('666'));
-    document.getElementById('product-2666').addEventListener('click', () => setProductSelection('2666'));
-    setProductSelection('all');
+    fillSelect('province-filter', sortPinyin(provinces), '所有省份');
+    fillSelect('dep-city-filter', sortPinyin(depCities), '所有出港城市');
+    fillSelect('arr-city-filter', sortPinyin(arrCities), '所有到港城市');
 }
 
-// 拼音排序
+/**
+ * 向下拉框填充选项
+ * 参数：id - select 元素 ID；items - 选项数组；placeholder - 默认选项文案
+ * 返回值：无
+ */
+function fillSelect(id, items, placeholder) {
+    const el = document.getElementById(id);
+    el.innerHTML = '<option value="all">' + placeholder + '</option>' +
+        items.map(function (v) { return '<option value="' + escapeAttr(v) + '">' + escapeHtml(v) + '</option>'; }).join('');
+}
+
+/**
+ * 按中文拼音排序
+ * 参数：items - Set 或数组
+ * 返回值：Array 排序后的数组
+ */
 function sortPinyin(items) {
     try {
-        return Array.from(items).sort((a, b) => {
+        return Array.from(items).sort(function (a, b) {
             return a.localeCompare(b, 'zh-Hans-CN', { sensitivity: 'accent' });
         });
     } catch (e) {
@@ -96,105 +131,165 @@ function sortPinyin(items) {
     }
 }
 
-// 加载航班数据
-function loadFlights(page) {
-    if (page) {
-        currentPage = page;
-    } else {
-        currentPage = 1;
-    }
-
+/**
+ * 应用筛选条件（省份/城市/产品/搜索），生成 filteredFlights
+ * 参数：无（读取页面控件状态）
+ * 返回值：无
+ */
+function applyFilters() {
     const province = document.getElementById('province-filter').value;
-    const search = document.getElementById('search-input').value;
     const depCity = document.getElementById('dep-city-filter').value;
     const arrCity = document.getElementById('arr-city-filter').value;
-    const product = window.selectedProduct || 'all';
+    const search = document.getElementById('search-input').value.trim().toLowerCase();
 
-    let flights = allData.flights.slice();
+    let flights = allData.flights;
 
-    // 应用筛选
     if (province !== 'all') {
-        flights = flights.filter(f =>
-            f.departure_province === province || f.arrival_province === province
-        );
+        flights = flights.filter(function (f) {
+            return f.departure_province === province || f.arrival_province === province;
+        });
     }
     if (depCity !== 'all') {
-        flights = flights.filter(f => f.departure_city === depCity);
+        flights = flights.filter(function (f) { return f.departure_city === depCity; });
     }
     if (arrCity !== 'all') {
-        flights = flights.filter(f => f.arrival_city === arrCity);
+        flights = flights.filter(function (f) { return f.arrival_city === arrCity; });
     }
-    if (product === '666') {
-        flights = flights.filter(f => {
-            const tokens = (f.product || '').split('/').map(t => t.trim().toLowerCase());
-            return tokens.includes('666');
+    if (selectedProduct === '666') {
+        flights = flights.filter(function (f) {
+            return (f.product || '').split('/').indexOf('666') !== -1;
         });
-    } else if (product !== 'all') {
-        flights = flights.filter(f => f.product === product);
+    } else if (selectedProduct !== 'all') {
+        flights = flights.filter(function (f) { return f.product === selectedProduct; });
     }
-
-    // 应用搜索
     if (search) {
-        const searchLower = search.toLowerCase();
-        flights = flights.filter(f =>
-            f.flight_number.toLowerCase().includes(searchLower) ||
-            f.departure_city.toLowerCase().includes(searchLower) ||
-            f.arrival_city.toLowerCase().includes(searchLower)
-        );
+        flights = flights.filter(function (f) { return f._search.indexOf(search) !== -1; });
     }
 
-    // 分页
-    total = flights.length;
-    totalPages = total > 0 ? Math.ceil(total / pageSize) : 0;
-    if (totalPages > 0 && currentPage > totalPages) {
-        currentPage = totalPages;
-    }
-    const start = (currentPage - 1) * pageSize;
-    const flightsPage = flights.slice(start, start + pageSize);
-
-    currentFlights = flightsPage;
-    displayFlights(total);
+    filteredFlights = flights.slice().sort(compareFlights);
 }
 
-// 显示航班数据
-function displayFlights(total) {
-    const container = document.getElementById('flights-container');
-    container.innerHTML = '';
+/**
+ * 排序比较函数：按当前 sortKey/sortDir 对两条航线排序
+ * 参数：a、b - 两条航线记录对象
+ * 返回值：Number，负数表示 a 在前
+ */
+function compareFlights(a, b) {
+    if (!sortKey) return 0;  // 未选择排序列时保持数据原始顺序
+    let va = a[sortKey] || '';
+    let vb = b[sortKey] || '';
+    if (va < vb) return -1 * sortDir;
+    if (va > vb) return 1 * sortDir;
+    return 0;
+}
 
-    if (currentFlights.length === 0) {
-        document.getElementById('no-data').style.display = 'block';
+/**
+ * 设置排序列并切换升降序，随后刷新列表
+ * 参数：key - 排序字段名
+ * 返回值：无
+ */
+function setSortKey(key) {
+    if (sortKey === key) {
+        sortDir = -sortDir;
+    } else {
+        sortKey = key;
+        sortDir = 1;
+    }
+    updateSortIcons();
+    loadFlights(currentPage);
+}
+
+/**
+ * 更新表头排序图标状态
+ * 参数：无
+ * 返回值：无
+ */
+function updateSortIcons() {
+    document.querySelectorAll('#flights-table thead th[data-sort]').forEach(function (th) {
+        th.classList.remove('sorted-asc', 'sorted-desc');
+        const icon = th.querySelector('.sort-icon');
+        if (th.dataset.sort === sortKey) {
+            th.classList.add(sortDir === 1 ? 'sorted-asc' : 'sorted-desc');
+            icon.className = 'bi sort-icon ' + (sortDir === 1 ? 'bi-caret-up-fill' : 'bi-caret-down-fill');
+        } else {
+            icon.className = 'bi bi-arrow-down-up sort-icon';
+        }
+    });
+}
+
+/**
+ * 加载并渲染指定页的航班数据
+ * 参数：page - 目标页码（从 1 开始）
+ * 返回值：无
+ */
+function loadFlights(page) {
+    currentPage = page || 1;
+    applyFilters();
+
+    const total = filteredFlights.length;
+    totalPages = total > 0 ? Math.ceil(total / PAGE_SIZE) : 0;
+    if (totalPages > 0 && currentPage > totalPages) currentPage = totalPages;
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    displayFlights(filteredFlights.slice(start, start + PAGE_SIZE), total);
+}
+
+/**
+ * 渲染当前页航班行与结果计数
+ * 参数：rows - 当前页航线数组；total - 筛选后总条数
+ * 返回值：无
+ */
+function displayFlights(rows, total) {
+    const container = document.getElementById('flights-container');
+    const tableWrap = document.getElementById('table-wrap');
+    const noData = document.getElementById('no-data');
+
+    document.getElementById('result-count').textContent = '共 ' + total + ' 条';
+
+    if (rows.length === 0) {
+        tableWrap.style.display = 'none';
+        noData.style.display = 'block';
+        document.getElementById('pagination').style.display = 'none';
         hideLoading();
         return;
     }
 
-    document.getElementById('no-data').style.display = 'none';
-
-    const html = currentFlights.map(flight => `
-        <tr>
-            <td>${escapeHtml(flight.flight_number)}</td>
-            <td>${escapeHtml(flight.departure_city)}</td>
-            <td>${escapeHtml(flight.arrival_city)}</td>
-            <td>${escapeHtml(flight.departure_time)}</td>
-            <td>${escapeHtml(flight.schedule)}</td>
-            <td>${escapeHtml(flight.product)}</td>
-            <td>${escapeHtml(flight.departure_province)}</td>
-            <td>${escapeHtml(flight.arrival_province)}</td>
-        </tr>
-    `).join('');
+    const html = rows.map(function (f) {
+        return '<tr>' +
+            '<td class="fw-semibold">' + escapeHtml(f.flight_number) + '</td>' +
+            '<td>' + escapeHtml(f.departure_city) + '</td>' +
+            '<td>' + escapeHtml(f.arrival_city) + '</td>' +
+            '<td>' + escapeHtml(f.departure_time) + '</td>' +
+            '<td><span class="schedule-badge" title="班期代码: ' + escapeAttr(f.schedule) + '">' + scheduleText(f.schedule) + '</span></td>' +
+            '<td><span class="date-range-badge">' + escapeHtml(f.date_range || '-') + '</span></td>' +
+            '<td><span class="product-badge">' + escapeHtml(f.product) + '</span></td>' +
+            '<td>' + escapeHtml(f.departure_province) + '</td>' +
+            '<td>' + escapeHtml(f.arrival_province) + '</td>' +
+            '</tr>';
+    }).join('');
 
     container.innerHTML = html;
+    tableWrap.style.display = 'block';
+    noData.style.display = 'none';
     renderPagination();
     hideLoading();
 }
 
-// HTML 转义
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+/**
+ * 将班期代码转换为易读文本（如 246 → 二/四/六，1234567 → 每日）
+ * 参数：code - 班期数字字符串
+ * 返回值：String 展示文本
+ */
+function scheduleText(code) {
+    if (code === '1234567') return '每日';
+    return String(code).split('').map(function (d) { return WEEK_MAP[d] || d; }).join('/');
 }
 
-// 渲染分页
+/**
+ * 渲染分页控件
+ * 参数：无（读取 currentPage/totalPages）
+ * 返回值：无
+ */
 function renderPagination() {
     const pagination = document.getElementById('pagination');
     if (totalPages <= 1) {
@@ -203,105 +298,57 @@ function renderPagination() {
         return;
     }
     pagination.style.display = 'block';
-    let html = '<nav aria-label="航线分页"><ul class="pagination justify-content-center">';
+    let html = '<nav aria-label="航线分页"><ul class="pagination pagination-sm justify-content-center mb-0">';
 
-    const prevDisabled = currentPage === 1 ? ' disabled' : '';
-    html += `<li class="page-item${prevDisabled}"><a class="page-link" href="#" onclick="gotoPage(${currentPage-1});return false;">上一页</a></li>`;
+    html += '<li class="page-item' + (currentPage === 1 ? ' disabled' : '') + '"><a class="page-link" href="#" data-page="' + (currentPage - 1) + '">上一页</a></li>';
 
-    const total = totalPages;
     const start = Math.max(1, currentPage - 2);
-    const end = Math.min(total, currentPage + 2);
-
+    const end = Math.min(totalPages, currentPage + 2);
     if (start > 1) {
-        html += `<li class="page-item"><a class="page-link" href="#" onclick="gotoPage(1);return false;">1</a></li>`;
-        if (start > 2) html += `<li class="page-item disabled"><span class="page-link">…</span></li>`;
+        html += '<li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li>';
+        if (start > 2) html += '<li class="page-item disabled"><span class="page-link">…</span></li>';
     }
-
     for (let i = start; i <= end; i++) {
-        const active = i === currentPage ? ' active' : '';
-        html += `<li class="page-item${active}"><a class="page-link" href="#" onclick="gotoPage(${i});return false;">${i}</a></li>`;
+        html += '<li class="page-item' + (i === currentPage ? ' active' : '') + '"><a class="page-link" href="#" data-page="' + i + '">' + i + '</a></li>';
+    }
+    if (end < totalPages) {
+        if (end < totalPages - 1) html += '<li class="page-item disabled"><span class="page-link">…</span></li>';
+        html += '<li class="page-item"><a class="page-link" href="#" data-page="' + totalPages + '">' + totalPages + '</a></li>';
     }
 
-    if (end < total) {
-        if (end < total - 1) html += `<li class="page-item disabled"><span class="page-link">…</span></li>`;
-        html += `<li class="page-item"><a class="page-link" href="#" onclick="gotoPage(${total});return false;">${total}</a></li>`;
-    }
-
-    const nextDisabled = currentPage === totalPages ? ' disabled' : '';
-    html += `<li class="page-item${nextDisabled}"><a class="page-link" href="#" onclick="gotoPage(${currentPage+1});return false;">下一页</a></li>`;
+    html += '<li class="page-item' + (currentPage === totalPages ? ' disabled' : '') + '"><a class="page-link" href="#" data-page="' + (currentPage + 1) + '">下一页</a></li>';
     html += '</ul></nav>';
     pagination.innerHTML = html;
 }
 
+// 分页点击（事件委托，避免内联 onclick）
+document.addEventListener('click', function (e) {
+    const link = e.target.closest('#pagination a.page-link[data-page]');
+    if (link) {
+        e.preventDefault();
+        gotoPage(parseInt(link.dataset.page, 10));
+    }
+});
+
+/**
+ * 跳转到指定页码
+ * 参数：page - 目标页码
+ * 返回值：无
+ */
 function gotoPage(page) {
     if (page < 1 || page > totalPages) return;
     loadFlights(page);
+    document.getElementById('table-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// 搜索航班
-function searchFlights() {
-    showLoading();
-    loadFlights(1);
-}
-
-// 加载统计信息
-function loadStatistics() {
-    const data = allData;
-    let html = `
-        <div class="mb-3">
-            <strong>数据版本:</strong> <span class="badge bg-hna">${data.data_version || '未知'}</span><br>
-            <strong>总航线数:</strong> <span class="badge bg-hna">${data.total_flights}</span>
-        </div>
-        <h6>各省份航线分布:</h6>
-        <div class="row">
-    `;
-
-    // 计算省份统计
-    const provinceStats = {};
-    data.flights.forEach(flight => {
-        provinceStats[flight.departure_province] = (provinceStats[flight.departure_province] || 0) + 1;
-        provinceStats[flight.arrival_province] = (provinceStats[flight.arrival_province] || 0) + 1;
-    });
-
-    // 按航线数量排序
-    const sortedStats = Object.entries(provinceStats).sort((a, b) => b[1] - a[1]);
-
-    sortedStats.forEach(([province, count]) => {
-        html += `
-            <div class="col-md-6 mb-2">
-                <div class="d-flex justify-content-between">
-                    <span>${escapeHtml(province)}</span>
-                    <span class="badge bg-hna">${count}</span>
-                </div>
-            </div>
-        `;
-    });
-
-    html += '</div>';
-    document.getElementById('statistics-content').innerHTML = html;
-    new bootstrap.Modal(document.getElementById('statisticsModal')).show();
-}
-
-// 更新统计信息
-function updateStats(data) {
-    document.getElementById('total-flights').textContent = data.total_flights || 0;
-    document.getElementById('data-version').textContent = data.data_version || '未知';
-
-    // 计算覆盖省份数
-    const uniqueProvinces = new Set();
-    data.flights.forEach(f => {
-        uniqueProvinces.add(f.departure_province);
-        uniqueProvinces.add(f.arrival_province);
-    });
-    document.getElementById('total-provinces').textContent = uniqueProvinces.size;
-}
-
-// 产品选择
+/**
+ * 设置产品筛选并刷新列表
+ * 参数：value - 产品标识（all / 666 / 2666）
+ * 返回值：无
+ */
 function setProductSelection(value) {
-    window.selectedProduct = value;
-    ['product-all','product-666','product-2666'].forEach(id => {
-        const btn = document.getElementById(id);
-        if (!btn) return;
+    selectedProduct = value;
+    document.querySelectorAll('.product-chip-group button').forEach(function (btn) {
         const isActive = btn.dataset.product === value;
         btn.classList.toggle('btn-hna', isActive);
         btn.classList.toggle('btn-outline-hna', !isActive);
@@ -309,23 +356,114 @@ function setProductSelection(value) {
     loadFlights(1);
 }
 
-// 显示加载状态
+/**
+ * 重置全部筛选条件并刷新列表
+ * 参数：无
+ * 返回值：无
+ */
+function resetFilters() {
+    document.getElementById('search-input').value = '';
+    document.getElementById('province-filter').value = 'all';
+    document.getElementById('dep-city-filter').value = 'all';
+    document.getElementById('arr-city-filter').value = 'all';
+    sortKey = null;
+    sortDir = 1;
+    updateSortIcons();
+    setProductSelection('all');
+}
+
+/**
+ * 打开统计弹窗，展示各省份航线分布与产品分布
+ * 参数：无
+ * 返回值：无
+ */
+function loadStatistics() {
+    const provinceStats = {};
+    const productStats = {};
+    filteredFlights.forEach(function (f) {
+        provinceStats[f.departure_province] = (provinceStats[f.departure_province] || 0) + 1;
+        provinceStats[f.arrival_province] = (provinceStats[f.arrival_province] || 0) + 1;
+        productStats[f.product] = (productStats[f.product] || 0) + 1;
+    });
+
+    const maxCount = Math.max.apply(null, Object.values(provinceStats).concat([1]));
+    const sortedStats = Object.entries(provinceStats).sort(function (a, b) { return b[1] - a[1]; });
+
+    let html = '<div class="mb-3 d-flex gap-3 flex-wrap">' +
+        '<span class="badge bg-hna">数据版本: ' + escapeHtml(allData.data_version || '未知') + '</span>' +
+        '<span class="badge bg-hna">当前筛选: ' + filteredFlights.length + ' 条</span>';
+    Object.entries(productStats).forEach(function (kv) {
+        html += '<span class="product-badge">' + escapeHtml(kv[0]) + ' × ' + kv[1] + '</span>';
+    });
+    html += '</div><h6 class="text-muted">各省份航线分布（出港+到港）:</h6><div class="row g-2">';
+
+    sortedStats.forEach(function (kv) {
+        const pct = Math.round(kv[1] / maxCount * 100);
+        html += '<div class="col-md-6"><div class="d-flex align-items-center gap-2">' +
+            '<span style="width:64px" class="small text-truncate" title="' + escapeAttr(kv[0]) + '">' + escapeHtml(kv[0]) + '</span>' +
+            '<div class="progress flex-grow-1" style="height:14px">' +
+            '<div class="progress-bar" role="progressbar" style="width:' + pct + '%;background-color:var(--hna-primary)"></div>' +
+            '</div><span class="small fw-semibold">' + kv[1] + '</span></div></div>';
+    });
+    html += '</div>';
+
+    document.getElementById('statistics-content').innerHTML = html;
+    statisticsModal.show();
+}
+
+/**
+ * 更新顶部统计卡片（总数、版本、覆盖省份数）
+ * 参数：data - 航线数据对象
+ * 返回值：无
+ */
+function updateStats(data) {
+    document.getElementById('total-flights').textContent = data.total_flights || data.flights.length || 0;
+    document.getElementById('data-version').textContent = data.data_version || '未知';
+
+    const uniqueProvinces = new Set();
+    data.flights.forEach(function (f) {
+        uniqueProvinces.add(f.departure_province);
+        uniqueProvinces.add(f.arrival_province);
+    });
+    document.getElementById('total-provinces').textContent = uniqueProvinces.size;
+}
+
+/**
+ * HTML 文本转义，防止 XSS
+ * 参数：text - 原始字符串
+ * 返回值：String 转义后的字符串
+ */
+function escapeHtml(text) {
+    return String(text == null ? '' : text)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+/**
+ * 属性值转义（用于 title/value 等属性）
+ * 参数：text - 原始字符串
+ * 返回值：String 转义后的字符串
+ */
+function escapeAttr(text) {
+    return escapeHtml(text);
+}
+
+/**
+ * 显示加载状态
+ * 参数：无
+ * 返回值：无
+ */
 function showLoading() {
     document.getElementById('loading').style.display = 'block';
-    document.getElementById('flights-container').innerHTML = '';
+    document.getElementById('table-wrap').style.display = 'none';
     document.getElementById('no-data').style.display = 'none';
 }
 
-// 隐藏加载状态
+/**
+ * 隐藏加载状态
+ * 参数：无
+ * 返回值：无
+ */
 function hideLoading() {
     document.getElementById('loading').style.display = 'none';
 }
-
-// 搜索框回车事件
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('search-input').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            searchFlights();
-        }
-    });
-});
