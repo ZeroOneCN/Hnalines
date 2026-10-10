@@ -4,6 +4,8 @@
  */
 
 const DATA_URL = 'hainan_airlines_data.json';
+const NOTICE_URL = 'notice.json';
+const NOTICE_READ_KEY = 'hna_notice_read';   // localStorage 已读通知 id
 const PAGE_SIZE = 50;
 const WEEK_MAP = { '1': '一', '2': '二', '3': '三', '4': '四', '5': '五', '6': '六', '7': '日' };
 
@@ -15,14 +17,101 @@ let sortKey = null;         // null 表示保持数据原始顺序（Excel 已�
 let sortDir = 1;            // 1 升序 / -1 降序
 let selectedProduct = 'all';
 let statisticsModal = null;
+let noticeModal = null;
+let currentNotice = null;   // 当前通知对象（null 表示无通知）
 let searchTimer = null;
 
 // 页面加载完成后初始化数据与事件
 document.addEventListener('DOMContentLoaded', function () {
     statisticsModal = new bootstrap.Modal(document.getElementById('statisticsModal'));
+    noticeModal = new bootstrap.Modal(document.getElementById('noticeModal'));
     bindEvents();
+    bindNoticeEvents();
     loadData();
+    loadNotice();
 });
+
+/**
+ * 绑定通知弹窗交互（铃铛重看、关闭时标记已读）
+ * 参数：无
+ * 返回值：无
+ */
+function bindNoticeEvents() {
+    document.getElementById('notice-bell').addEventListener('click', function () {
+        if (currentNotice) showNoticeModal(false);
+    });
+    document.getElementById('notice-ok').addEventListener('click', markNoticeRead);
+    document.getElementById('noticeModal').addEventListener('hidden.bs.modal', markNoticeRead);
+}
+
+/**
+ * 拉取站点通知配置（notice.json），失败时静默跳过
+ * 参数：无
+ * 返回值：无
+ */
+function loadNotice() {
+    fetch(NOTICE_URL)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (notice) {
+            if (!notice || notice.enabled === false || !notice.id) return;
+            currentNotice = notice;
+            updateNoticeBell();
+            // 同一版本仅自动弹一次：已读记录保存在 localStorage
+            if (getReadNoticeId() !== notice.id) showNoticeModal(true);
+        })
+        .catch(function () { /* 通知为可选功能，加载失败不影响主流程 */ });
+}
+
+/**
+ * 渲染并弹出通知弹窗
+ * 参数：auto - 是否自动弹出（true 时仅未读弹出；false 为用户主动查看）
+ * 返回值：无
+ */
+function showNoticeModal(auto) {
+    if (!currentNotice) return;
+    document.getElementById('notice-title').textContent = currentNotice.title || '站点通知';
+    document.getElementById('notice-body').textContent = currentNotice.content || '';
+    document.getElementById('notice-date').textContent = currentNotice.publish_date ? '发布于 ' + currentNotice.publish_date : '';
+    noticeModal.show();
+}
+
+/**
+ * 将当前通知标记为已读（写入 localStorage 并熄灭红点）
+ * 参数：无
+ * 返回值：无
+ */
+function markNoticeRead() {
+    if (!currentNotice) return;
+    try {
+        localStorage.setItem(NOTICE_READ_KEY, currentNotice.id);
+    } catch (e) { /* 隐私模式等场景下忽略 */ }
+    updateNoticeBell();
+}
+
+/**
+ * 读取已读通知 id
+ * 参数：无
+ * 返回值：String 已读通知 id；未读过返回 null
+ */
+function getReadNoticeId() {
+    try {
+        return localStorage.getItem(NOTICE_READ_KEY);
+    } catch (e) {
+        return null;
+    }
+}
+
+/**
+ * 更新导航栏铃铛红点显示（有未读通知时点亮）
+ * 参数：无
+ * 返回值：无
+ */
+function updateNoticeBell() {
+    const dot = document.getElementById('notice-dot');
+    if (!dot) return;
+    const unread = currentNotice && getReadNoticeId() !== currentNotice.id;
+    dot.style.display = unread ? 'block' : 'none';
+}
 
 /**
  * 绑定页面交互事件（筛选下拉、搜索防抖、产品按钮、表头排序）
