@@ -53,11 +53,13 @@ function loadNotice() {
     fetch(NOTICE_URL)
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (notice) {
-            if (!notice || notice.enabled === false || !notice.id) return;
-            currentNotice = notice;
+            if (notice && notice.enabled !== false && notice.id) {
+                currentNotice = notice;
+                // 同一版本仅自动弹一次：已读记录保存在 localStorage
+                if (getReadNoticeId() !== notice.id) showNoticeModal(true);
+            }
+            // 无有效通知（未配置、已下线或字段缺失）时同步隐藏铃铛入口
             updateNoticeBell();
-            // 同一版本仅自动弹一次：已读记录保存在 localStorage
-            if (getReadNoticeId() !== notice.id) showNoticeModal(true);
         })
         .catch(function () { /* 通知为可选功能，加载失败不影响主流程 */ });
 }
@@ -102,14 +104,20 @@ function getReadNoticeId() {
 }
 
 /**
- * 更新导航栏铃铛红点显示（有未读通知时点亮）
+ * 更新导航栏铃铛入口：无有效通知时隐藏整个铃铛，有通知时按已读状态控制红点
  * 参数：无
  * 返回值：无
  */
 function updateNoticeBell() {
+    const bell = document.getElementById('notice-bell');
     const dot = document.getElementById('notice-dot');
-    if (!dot) return;
-    const unread = currentNotice && getReadNoticeId() !== currentNotice.id;
+    if (!bell || !dot) return;
+    if (!currentNotice) {
+        bell.style.display = 'none';
+        return;
+    }
+    bell.style.display = '';
+    const unread = getReadNoticeId() !== currentNotice.id;
     dot.style.display = unread ? 'block' : 'none';
 }
 
