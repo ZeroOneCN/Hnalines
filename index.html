@@ -12,6 +12,8 @@
             --hna-primary: #e60012;
             --hna-dark: #b0000e;
             --hna-border: #dee2e6;
+            --ok: #198754;
+            --warn: #dc3545;
         }
         body {
             background: #fff;
@@ -80,6 +82,120 @@
         .modal-header { border-bottom-color: var(--hna-border); }
         .text-hna { color: var(--hna-primary) !important; }
         .bg-hna { background-color: var(--hna-primary) !important; }
+
+        /* 主标签页（航线查询 / 行程规划） */
+        #main-tabs { border-bottom-color: var(--hna-border); }
+        #main-tabs .nav-link { color: #495057; }
+        #main-tabs .nav-link:hover { color: var(--hna-primary); }
+        #main-tabs .nav-link.active {
+            color: var(--hna-primary);
+            font-weight: 600;
+            border-color: var(--hna-border) var(--hna-border) #fff;
+        }
+
+        /* ===== 行程规划模块 ===== */
+        .panel {
+            background: #fff;
+            border: 1px solid var(--hna-border);
+            border-radius: 4px;
+            padding: .9rem 1rem;
+        }
+        .panel h6 { font-weight: 600; }
+        .seg-card {
+            border: 1px solid var(--hna-border);
+            border-radius: 4px;
+            padding: .6rem .7rem;
+            margin-bottom: .6rem;
+            background: #fafbfc;
+        }
+        .seg-card.seg-ok { border-left: 3px solid var(--ok); }
+        .seg-card.seg-bad { border-left: 3px solid var(--warn); }
+        .seg-head {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            margin-bottom: .45rem;
+        }
+        .seg-no {
+            background: #e9ecef;
+            color: #495057;
+            font-size: .75rem;
+            font-weight: 600;
+            border-radius: 3px;
+            padding: .05rem .45rem;
+        }
+        .seg-body { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+        .seg-body input[type=date] { width: 140px; font-size: .875rem; padding: .25rem .4rem; }
+        .seg-arrow { color: #6c757d; }
+        .seg-status { font-size: .8rem; font-weight: 600; white-space: nowrap; }
+        .seg-status.ok { color: var(--ok); }
+        .seg-status.bad { color: var(--warn); }
+        /* 可搜索城市选择框 */
+        .cbx { position: relative; flex: 1 1 120px; min-width: 110px; }
+        .cbx-input { font-size: .875rem; padding: .25rem .5rem; }
+        .cbx-menu {
+            position: absolute; z-index: 1080; display: none; left: 0; right: 0;
+            background: #fff; border: 1px solid var(--hna-border); border-radius: 4px;
+            max-height: 230px; overflow-y: auto; margin-top: 2px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.12);
+        }
+        .cbx-menu.open { display: block; }
+        .cbx-item { padding: .3rem .65rem; font-size: .85rem; cursor: pointer; white-space: nowrap; }
+        .cbx-item:hover, .cbx-item.active { background: #fff0f1; color: var(--hna-primary); }
+        .cbx-empty { padding: .4rem .65rem; font-size: .82rem; color: #999; }
+        .limit-warning {
+            display: none;
+            background: #fff8e1; border: 1px solid #ffe082; color: #8d6e00;
+            font-size: .8rem; border-radius: 4px; padding: .4rem .6rem; margin-bottom: .55rem;
+        }
+        .limit-warning.show { display: block; }
+        .alt-chip {
+            font-size: .8rem; padding: .15rem .55rem; border-radius: 3px;
+            border: 1px solid #b7dfc9; background: #f1f9f4; color: #146c43; cursor: pointer;
+        }
+        .alt-chip:hover { background: #d1e7dd; }
+        .transit-card {
+            border: 1px solid var(--hna-border); border-radius: 4px;
+            padding: .55rem .65rem; margin-bottom: .5rem; background: #fafbfc;
+        }
+        .transit-card.t-level2 { border-left: 3px solid var(--ok); }
+        .transit-card.t-level1 { border-left: 3px solid #fd7e14; }
+        .transit-leg { font-size: .82rem; }
+        .transit-leg .leg-title { color: #6c757d; font-size: .78rem; }
+        .t-badge { font-size: .72rem; font-weight: 700; padding: .08rem .4rem; border-radius: 3px; white-space: nowrap; }
+        .t-badge.lv2 { background: #d1e7dd; color: #0f5132; }
+        .t-badge.lv1 { background: #ffe5d0; color: #984c0c; }
+        .t-badge.lv0 { background: #e9ecef; color: #6c757d; }
+        .mini-table { font-size: .8rem; margin-bottom: .25rem; }
+        .mini-table td, .mini-table th { padding: .12rem .35rem !important; white-space: nowrap; }
+        .mini-table tr.row-ok td { background: #f1f9f4; }
+        .chain-box {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .35rem;
+            font-size: .9rem;
+        }
+        .chain-city { font-weight: 600; }
+        .chain-mark { font-size: .8rem; }
+        .chain-mark.ok { color: var(--ok); }
+        .chain-mark.bad { color: var(--warn); }
+        .result-card { margin-bottom: .8rem; }
+        .table-planner { font-size: .85rem; margin-bottom: 0; }
+        .table-planner th { background: #f8f9fa; font-weight: 600; color: #495057; white-space: nowrap; }
+        .table-planner td { vertical-align: middle; white-space: nowrap; }
+        tr.row-ok { background: #f1f9f4; }
+        tr.row-ok td:first-child { border-left: 3px solid var(--ok); }
+        tr.row-outrange td { color: #adb5bd; }
+        .day-badge { font-weight: 700; font-size: .8rem; padding: .1rem .45rem; border-radius: 3px; }
+        .day-badge.ok { background: #d1e7dd; color: #0f5132; }
+        .day-badge.bad { background: #f8d7da; color: #842029; }
+        .empty-tip {
+            text-align: center;
+            color: #6c757d;
+            padding: 2.2rem 1rem;
+            font-size: .9rem;
+        }
     </style>
 </head>
 <body>
@@ -89,10 +205,7 @@
                 <i class="bi bi-airplane"></i> 海航随心飞航线
             </a>
             <span class="navbar-text text-white-50 d-none d-md-inline small">2026冬春航季 · 海航PLUS适用航班</span>
-            <a class="btn btn-sm btn-outline-light ms-auto me-2" href="trip-planner.html" title="多航段行程规划、班期核对与中转推荐">
-                <i class="bi bi-map"></i> 行程规划
-            </a>
-            <button type="button" class="btn btn-link text-white position-relative" id="notice-bell" title="站点通知" style="text-decoration: none;">
+            <button type="button" class="btn btn-link text-white position-relative ms-auto" id="notice-bell" title="站点通知" style="text-decoration: none;">
                 <i class="bi bi-bell"></i>
                 <span class="position-absolute bg-warning rounded-circle" id="notice-dot" style="width:8px; height:8px; top:6px; right:4px; display:none;"></span>
             </button>
@@ -100,6 +213,21 @@
     </nav>
 
     <div class="container mt-3 mb-5">
+        <ul class="nav nav-tabs mb-3" id="main-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab-query" data-bs-toggle="tab" data-bs-target="#pane-query" type="button" role="tab" aria-controls="pane-query" aria-selected="true">
+                    <i class="bi bi-search"></i> 航线查询
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-planner" data-bs-toggle="tab" data-bs-target="#pane-planner" type="button" role="tab" aria-controls="pane-planner" aria-selected="false">
+                    <i class="bi bi-map"></i> 行程规划
+                </button>
+            </li>
+        </ul>
+
+    <div class="tab-content">
+    <div class="tab-pane fade show active" id="pane-query" role="tabpanel" aria-labelledby="tab-query">
         <div class="notice-bar mb-2">
             <strong>海航 PLUS 会员权益卡适用航班参考列表</strong>（2026冬春航季：2026.10.25 - 2027.03.27）
         </div>
@@ -157,7 +285,7 @@
             </div>
             <div class="col-md-4 col-lg-6 d-flex justify-content-md-end align-items-center flex-wrap gap-2">
                 <span class="text-muted small">产品:</span>
-                <div class="product-chip-group btn-group" role="group">
+                <div class="product-chip-group btn-group" id="query-product-group" role="group">
                     <button type="button" class="btn btn-sm btn-outline-hna" data-product="all" id="product-all">所有</button>
                     <button type="button" class="btn btn-sm btn-outline-hna" data-product="666" id="product-666">666</button>
                     <button type="button" class="btn btn-sm btn-outline-hna" data-product="2666" id="product-2666">2666</button>
@@ -207,6 +335,55 @@
         </footer>
     </div>
 
+    <div class="tab-pane fade" id="pane-planner" role="tabpanel" aria-labelledby="tab-planner">
+        <div class="notice-bar mb-3">
+            <i class="bi bi-info-circle"></i>
+            按顺序添加航段（如 北京 → 西安 → 海口 → 北京），城市框可直接输入名称搜索；选择出行日期后自动核对当天航班。无直飞时会推荐同区域机场和中转方案。海航随心飞单次行程限 3 个航段，超出仅提醒、不影响规划。
+        </div>
+
+        <div class="row g-3">
+            <!-- 左侧：行程编辑 -->
+            <div class="col-lg-5 col-xl-4">
+                <div class="panel">
+                    <div class="d-flex align-items-center mb-2">
+                        <h6 class="mb-0"><i class="bi bi-map"></i> 我的行程</h6>
+                        <div class="product-chip-group btn-group btn-group-sm ms-auto" id="planner-product-group" role="group">
+                            <button type="button" class="btn btn-outline-hna" data-product="all">所有</button>
+                            <button type="button" class="btn btn-outline-hna" data-product="666">666</button>
+                            <button type="button" class="btn btn-outline-hna" data-product="2666">2666</button>
+                        </div>
+                    </div>
+                    <div id="limit-warning" class="limit-warning">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <span id="limit-warning-text"></span>
+                    </div>
+                    <div id="seg-list"></div>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button class="btn btn-sm btn-outline-secondary" id="btn-add"><i class="bi bi-plus-lg"></i> 添加航段</button>
+                        <button class="btn btn-sm btn-outline-secondary" id="btn-close-loop"><i class="bi bi-arrow-repeat"></i> 闭环回起点</button>
+                        <button class="btn btn-sm btn-outline-secondary ms-auto" id="btn-clear"><i class="bi bi-x-lg"></i> 清空</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：规划结果 -->
+            <div class="col-lg-7 col-xl-8">
+                <div class="panel mb-3">
+                    <h6><i class="bi bi-signpost-split"></i> 行程概览</h6>
+                    <div class="chain-box" id="chain-view"><span class="text-muted small">尚未添加航段</span></div>
+                </div>
+                <div id="result-list">
+                    <div class="panel empty-tip">
+                        <i class="bi bi-airplane-engines" style="font-size:2rem;"></i>
+                        <div class="mt-2">添加航段后，这里会显示每段的可用航班</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
     <div class="modal fade" id="noticeModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -241,6 +418,7 @@
     </div>
 
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="app.js?v=20261012"></script>
+    <script src="app.js?v=20261012b"></script>
+    <script src="trip-planner.js?v=20261012b"></script>
 </body>
 </html>

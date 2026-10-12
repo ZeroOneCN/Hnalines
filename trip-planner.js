@@ -1,7 +1,10 @@
 /**
  * 行程规划 - 前端逻辑
  * 数据源：hainan_airlines_data.json（与主站一致，直飞匹配 + 单中转方案推荐）
+ * 说明：本模块已并入 index.html 的「行程规划」标签页；整体包裹在 IIFE 内，
+ *      避免与 app.js 的同名顶层变量（DATA_URL、selectedProduct、sortPinyin 等）冲突。
  */
+(function () {
 
 const DATA_URL = 'hainan_airlines_data.json';
 const DRAFT_KEY = 'hna_trip_draft_v1';    // localStorage 行程草稿键
@@ -18,11 +21,27 @@ let cityProvince = {};        // 城市 → 省份映射（用于同区域机场
 let segments = [];            // 行程段：[{ from, to, date }]
 let selectedProduct = 'all';  // 产品筛选 all / 666 / 2666
 
-// 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', function () {
+let inited = false;   // 是否已初始化（标签页首次打开时懒加载，避免与主站重复拉取数据）
+
+/**
+ * 模块初始化（懒加载，仅执行一次）
+ * 参数：无
+ * 返回值：无
+ */
+function initOnce() {
+    if (inited) return;
+    inited = true;
     bindGlobalEvents();
     loadDraft();
     loadData();
+}
+
+// 标签页点击时初始化；若加载时已停留在本标签页（如 #planner 直达），立即初始化
+document.addEventListener('DOMContentLoaded', function () {
+    const tabBtn = document.getElementById('tab-planner');
+    if (!tabBtn) return;
+    tabBtn.addEventListener('click', initOnce);
+    if (tabBtn.classList.contains('active')) initOnce();
 });
 
 /**
@@ -35,7 +54,7 @@ function bindGlobalEvents() {
     document.getElementById('btn-close-loop').addEventListener('click', closeLoop);
     document.getElementById('btn-clear').addEventListener('click', clearAll);
 
-    document.querySelector('.product-chip-group').addEventListener('click', function (e) {
+    document.getElementById('planner-product-group').addEventListener('click', function (e) {
         const btn = e.target.closest('button[data-product]');
         if (btn) setProduct(btn.dataset.product);
     });
@@ -143,7 +162,7 @@ function loadData() {
  */
 function setProduct(value) {
     selectedProduct = value;
-    document.querySelectorAll('.product-chip-group button').forEach(function (btn) {
+    document.querySelectorAll('#planner-product-group button').forEach(function (btn) {
         const active = btn.dataset.product === value;
         btn.classList.toggle('btn-hna', active);
         btn.classList.toggle('btn-outline-hna', !active);
@@ -847,7 +866,7 @@ function loadDraft() {
         segments = [];
     }
     if (selectedProduct !== 'all') {
-        document.querySelectorAll('.product-chip-group button').forEach(function (btn) {
+        document.querySelectorAll('#planner-product-group button').forEach(function (btn) {
             const active = btn.dataset.product === selectedProduct;
             btn.classList.toggle('btn-hna', active);
             btn.classList.toggle('btn-outline-hna', !active);
@@ -874,3 +893,5 @@ function escapeHtml(text) {
 function escapeAttr(text) {
     return escapeHtml(text);
 }
+
+})();

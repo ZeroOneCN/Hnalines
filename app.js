@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     bindNoticeEvents();
     loadData();
     loadNotice();
+    // 支持 #planner 直达：模拟点击标签，交由 Bootstrap 切换（触发规划模块懒加载）
+    if (location.hash === '#planner') document.getElementById('tab-planner').click();
 });
 
 /**
@@ -148,7 +150,7 @@ function bindEvents() {
     });
 
     // 产品筛选按钮（事件委托，兼容动态按钮）
-    document.querySelector('.product-chip-group').addEventListener('click', function (e) {
+    document.getElementById('query-product-group').addEventListener('click', function (e) {
         const btn = e.target.closest('button[data-product]');
         if (btn) setProductSelection(btn.dataset.product);
     });
@@ -451,7 +453,7 @@ function gotoPage(page) {
  */
 function setProductSelection(value) {
     selectedProduct = value;
-    document.querySelectorAll('.product-chip-group button').forEach(function (btn) {
+    document.querySelectorAll('#query-product-group button').forEach(function (btn) {
         const isActive = btn.dataset.product === value;
         btn.classList.toggle('btn-hna', isActive);
         btn.classList.toggle('btn-outline-hna', !isActive);
