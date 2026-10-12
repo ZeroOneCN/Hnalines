@@ -15,11 +15,17 @@
             --ok: #198754;
             --warn: #dc3545;
         }
+        /* 固定显示页面滚动条：两个标签页内容高度不同，
+           避免切换时滚动条出现/消失导致整页横向抖动
+           （不用 scrollbar-gutter：html 默认 overflow:visible 时它不生效） */
+        html { overflow-y: scroll; }
         body {
             background: #fff;
             color: #212529;
             font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
         }
+        /* 滚动条已常驻，弹窗打开时无需 Bootstrap 的宽度补偿，否则内容会左移 */
+        body.modal-open { padding-right: 0 !important; }
         .navbar-hna {
             background-color: var(--hna-primary);
         }
