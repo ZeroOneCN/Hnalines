@@ -52,12 +52,15 @@ python convert_excel.py "海航PLUS适用航班26冬春航线_A-Z排序版.xlsx"
   "id": "notice-2026-1010",
   "title": "2026冬春航季数据已上线",
   "content": "通知正文...",
+  "signature": "海南海航航空销售有限公司\n2026年10月10日",
   "publish_date": "2026-10-10"
 }
 ```
 
 - `id` 变更后，所有访问者会重新收到一次弹窗（已读记录存于浏览器 localStorage）
 - `enabled` 设为 `false` 可下线通知
+- `signature` 为可选落款，填写后按正式行文右对齐展示（`\n` 可换行），不填则不显示
+- title 在弹窗标题栏展示，content 支持 `\n` 分段
 - 提交推送到 GitHub 后，Vercel 自动重新部署生效
 
 ## 快速部署到 Vercel

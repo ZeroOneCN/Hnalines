@@ -208,13 +208,16 @@
     </div>
 
     <div class="modal fade" id="noticeModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header py-2">
                     <h5 class="modal-title text-hna fs-6"><i class="bi bi-megaphone"></i> <span id="notice-title"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body" id="notice-body" style="white-space: pre-line;"></div>
+                <div class="modal-body">
+                    <div id="notice-body" style="white-space: pre-line;"></div>
+                    <div id="notice-signature" class="text-end mt-3" style="white-space: pre-line;"></div>
+                </div>
                 <div class="modal-footer py-2">
                     <small class="text-muted me-auto" id="notice-date"></small>
                     <button type="button" class="btn btn-sm btn-hna" data-bs-dismiss="modal" id="notice-ok">我知道了</button>

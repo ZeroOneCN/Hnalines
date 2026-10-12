@@ -73,6 +73,12 @@ function showNoticeModal(auto) {
     if (!currentNotice) return;
     document.getElementById('notice-title').textContent = currentNotice.title || '站点通知';
     document.getElementById('notice-body').textContent = currentNotice.content || '';
+    // 落款（发文单位与日期）按正式行文右对齐，未配置时隐藏
+    const signEl = document.getElementById('notice-signature');
+    if (signEl) {
+        signEl.textContent = currentNotice.signature || '';
+        signEl.style.display = currentNotice.signature ? '' : 'none';
+    }
     document.getElementById('notice-date').textContent = currentNotice.publish_date ? '发布于 ' + currentNotice.publish_date : '';
     noticeModal.show();
 }
